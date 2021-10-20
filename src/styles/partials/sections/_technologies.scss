@@ -1,0 +1,76 @@
+.technologies {
+  &__title {
+    margin-bottom: 46px;
+  }
+
+  &__text {
+    margin-bottom: 53px;
+  }
+
+  &-cards {
+    margin: 0 -9px 119px;
+
+    &__wrapper {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    &__item {
+      margin: 0 9px 18px;
+      width: calc(50% - 18px);
+    }
+  }
+
+  &-card {
+    position: relative;
+    min-height: 399px;
+    padding: 43px 24px 43px 32px;
+    border-radius: 12px;
+    text-decoration: none;
+    background-color: $white;
+    overflow: hidden;
+
+    @include hover {
+      .technologies-card__bg {
+        transform: scale(1.1) translate(-4%, -4%);
+      }
+    }
+
+    &__bg {
+      position: absolute;
+      z-index: 0;
+      bottom: 0;
+      right: 0;
+      transition: $transition;
+
+      &--4 {
+        width: 244px;
+      }
+    }
+
+    &__wrapper {
+      position: relative;
+      z-index: 1;
+    }
+
+    &__title {
+      margin-bottom: 24px;
+      font-family: $ubuntu;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 20px;
+      color: $nero;
+
+      &--f {
+        display: block;
+        font-size: 32px;
+        line-height: 32px;
+      }
+    }
+
+    &__description {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+}

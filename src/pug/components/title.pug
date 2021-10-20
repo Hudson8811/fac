@@ -1,0 +1,7 @@
+mixin title(text, className, tag = 'h1', logo)
+  .title(class= className)
+    #{tag}.title__item=text
+
+    if logo
+      .title__logo
+        img(src=logo.src alt=logo.alt?logo.alt:'').image
