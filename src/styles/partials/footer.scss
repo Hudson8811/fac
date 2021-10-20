@@ -1,0 +1,67 @@
+.footer {
+  padding: 25px 0;
+  font-size: 12px;
+  line-height: 24px;
+  letter-spacing: -0.015em;
+  color: $white;
+  background: $gradient;
+
+  &-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 174px;
+  }
+
+  &-link {
+    transition: $transition;
+
+    @include hover {
+      color: $mango;
+    }
+  }
+
+  &__socials {
+    display: flex;
+    align-items: center;
+
+    &-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+
+      @include hover {
+        svg {
+          path {
+            fill: $mango;
+          }
+        }
+      }
+
+      &:not(:last-child) {
+        margin-right: 4px;
+      }
+
+      svg {
+        width: 100%;
+        height: 100%;
+
+        path {
+          transition: $transition;
+        }
+      }
+    }
+  }
+
+  &__akfo {
+    display: flex;
+    align-items: center;
+
+    &-image {
+      width: 50px;
+      height: 50px;
+    }
+  }
+}

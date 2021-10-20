@@ -1,0 +1,5 @@
+mixin button(specs, type = 'link')
+  if (type === 'link')
+    a(href=specs.link?specs.link:'#' target=specs.target?specs.target:'_self' class=specs.class?specs.class:'').button=specs.text
+  else if (type === 'button')
+    button(type=specs.type class=specs.class?specs.class:'').button=specs.text
