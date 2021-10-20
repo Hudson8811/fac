@@ -1,0 +1,55 @@
+.partners {
+  &__text {
+    margin-bottom: 95px;
+  }
+
+  &-new {
+    position: relative;
+    padding: 101px 0 128px;
+    background-color: $white;
+    text-align: center;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 123px;
+      left: 58px;
+      width: 158px;
+      height: 120px;
+      background: url("../images/partners/partners-bg-1.png") no-repeat;
+      background-size: contain;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 349px;
+      height: 340px;
+      background: url("../images/partners/partners-bg-2.png") no-repeat;
+      background-size: contain;
+    }
+
+    &__symbol {
+      margin: 0 auto 39px;
+      width: 105px;
+      height: 105px;
+      overflow: hidden;
+    }
+
+    &__title {
+      margin-bottom: 16px;
+      font-size: 24px;
+      line-height: 24px;
+      letter-spacing: -0.015em;
+    }
+
+    &__link {
+      display: block;
+      margin-bottom: 64px;
+      font-size: 18px;
+      line-height: 24px;
+    }
+  }
+}

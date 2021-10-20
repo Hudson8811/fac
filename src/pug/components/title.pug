@@ -1,5 +1,6 @@
 mixin title(text, className, tag = 'h1', logo)
-  .title(class= className)
+  - const combinedClassName = `${className} ${(tag === 'h1') ? 'title--primary' : ''}`
+  .title(class= combinedClassName)
     #{tag}.title__item=text
 
     if logo

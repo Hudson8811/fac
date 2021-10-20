@@ -1,0 +1,36 @@
+extends ../layouts/default
+
+block vars
+  -
+    const page = {
+      title: 'Партнерам',
+      content: {
+        title: 'Партнерам',
+        text: `С платформой <span class="text--highlighted">Facilicom - F24</span> работают многочисленные партнеры и клиенты, получая доступ ко всем ее возможностям.`,
+      },
+    };
+
+block main
+  section.partners.section--first
+    .container
+      .content
+        +title(page.content.title, 'partners__title')
+        
+        +text(page.content.text, 'partners__text')
+      
+      .partners-new
+        .content--wide
+          .partners-new__wrapper
+            .partners-new__symbol
+              img(src="images/partners/TextBubble.png", alt="Иконка диалогового облака").image
+
+            h2.partners-new__title
+              | Узнайте, как стать партнером Facilicom: 
+
+            a(href="mailto:sales@facilicom.ru").email.partners-new__link
+              | sales@facilicom.ru
+
+            +button( { text: 'Узнать подробнее', class: 'partners-new__buttton' } )
+    
+
+

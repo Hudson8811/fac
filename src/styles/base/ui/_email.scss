@@ -1,0 +1,8 @@
+.email {
+  color: $blue;
+  transition: $transition;
+
+  @include hover {
+    color: $mango;
+  }
+}

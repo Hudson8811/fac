@@ -4,6 +4,10 @@
   font-size: 32px;
   line-height: 44px;
 
+  &--primary {
+    margin-bottom: 46px;
+  }
+
   &::before {
     content: "";
     position: absolute;

@@ -15,7 +15,7 @@ block vars
             image: 'images/technologies/tech-card-1.png',
           },
           {
-            link: '#',
+            link: './quality.html',
             title: 'Контроль качества',
             description: '27 лет Facilicom подтверждает высокие стандарты качества предоставляемых услуг обслуживания и управления объектами недвижимости.',
             image: 'images/technologies/tech-card-2.png',
@@ -38,23 +38,24 @@ block vars
 
 block main
   section.technologies.section--first
-    .container.content
-      +title(page.content.title, 'technologies__title')
-      
-      +text(page.content.text, 'technologies__text')
+    .container
+      .content
+        +title(page.content.title, 'technologies__title')
+        
+        +text(page.content.text, 'technologies__text')
 
-      .technologies-cards
-        .technologies-cards__wrapper
-          each card, index in page.content.cards
-            a(href=card.link).technologies-card.technologies-cards__item
-              .technologies-card__bg(class=`technologies-card__bg--${index+1}`)
-                img(src=card.image, alt="").image
+        .technologies-cards
+          .technologies-cards__wrapper
+            each card, index in page.content.cards
+              a(href=card.link).technologies-card.technologies-cards__item
+                .technologies-card__bg(class=`technologies-card__bg--${index+1}`)
+                  img(src=card.image, alt="").image
 
-              .technologies-card__wrapper
-                h2.technologies-card__title
-                  span.technologies-card__title--f
-                    | F24.
-                  span.technologies-card__title=card.title
-                
-                p.technologies-card__description=card.description
+                .technologies-card__wrapper
+                  h2.technologies-card__title
+                    span.technologies-card__title--f
+                      | F24.
+                    span.technologies-card__title=card.title
+                  
+                  p.technologies-card__description=card.description
 
