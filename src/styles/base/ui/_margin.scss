@@ -1,0 +1,19 @@
+.margin-bottom {
+  margin-bottom: 32px;
+
+  &--16 {
+    margin-bottom: 16px;
+  }
+
+  &--48 {
+    margin-bottom: 48px;
+  }
+
+  &--64 {
+    margin-bottom: 64px;
+  }
+
+  &--128 {
+    margin-bottom: 128px;
+  }
+}
