@@ -1,0 +1,88 @@
+.tender {
+  &-contacts {
+    position: relative;
+    padding-bottom: 92px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 180px;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+      width: 100%;
+      background-color: $heather;
+      opacity: 0.12;
+    }
+  }
+
+  &-form {
+    padding: 44px 32px 32px;
+    border-radius: 12px;
+    background-color: $white;
+
+    &__title {
+      margin-bottom: 36px;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 24px;
+      letter-spacing: -0.015em;
+    }
+
+    &__wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    &__input {
+      margin-bottom: 20px;
+      width: calc(50% - 15px);
+
+      &:nth-child(2n) {
+        margin-left: 30px;
+      }
+    }
+
+    &__link {
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 26px;
+      background: $gradient;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    &__extra {
+      align-items: center;
+      margin-bottom: 12px;
+
+      &-file {
+        margin-left: auto;
+        margin-bottom: 20px;
+      }
+    }
+
+    &__bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  &__title {
+    margin-bottom: 46px;
+  }
+
+  &__text {
+    margin-bottom: 32px;
+  }
+
+  &__description {
+    margin-bottom: 64px;
+    max-width: 589px;
+    font-size: 18px;
+    line-height: 24px;
+  }
+}

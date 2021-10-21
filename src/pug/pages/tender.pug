@@ -1,0 +1,91 @@
+extends ../layouts/default
+
+block vars
+  -
+    const page = {
+      title: 'Приглашение на тендер',
+      content: {
+        title: 'Приглашение на тендер',
+        text: 'Если вы находитесь в поиске подрядчика, вы можете пригласить нас для участия в вашем тендере.Мы оказываем полный спектр фасилити-услуг и работаем с объектами любой сложности.',
+        description: `Вы можете направить тендерные материалы  на <a href="sales@facilicom.ru" class="email">sales@facilicom.ru</a> или заполнить форму ниже. `,
+        form: {
+          title: 'Пишите нам',
+          inputs: [
+            {
+              name: 'company',
+              placeholder: 'Компания',
+              required: true,
+            },
+            {
+              name: 'person',
+              placeholder: 'Контактное лицо',
+              required: true,
+            },
+            {
+              type: 'email',
+              name: 'email',
+              placeholder: 'E-mail контактного лица',
+              required: true,
+            },
+            {
+              type: 'tel',
+              name: 'tel',
+              placeholder: 'Телефон контактного лица',
+              required: true,
+            },
+            {
+              name: 'date',
+              placeholder: 'Срок окончания приема заявок',
+              required: true,
+            },
+          ],
+          button: {
+            type: 'submit',
+            class: 'tender-form__button',
+            text: 'Отправить сообщение',
+            color: 'orange',
+          },
+        },
+      },
+    };
+
+block main
+  section.tender.section--first
+    .container
+      .content
+        +title(page.content.title, 'tender__title')
+        
+        +text(page.content.text, 'tender__text')
+
+        p.tender__description!=page.content.description
+      
+      .tender-contacts
+        .content
+          form(action="https://echo.htmlacademy.ru" method="POST").tender-form.tender-contacts__form
+            .tender-form__title=page.content.form.title
+
+            .tender-form__wrapper
+              each input in page.content.form.inputs
+                .tender-form__input.input
+                  input(type=input.type?input.type:'text' name=input.name placeholder=input.placeholder required=input.required?true:false).input-item.tender-form__input-item
+              
+            .tender-form__wrapper.tender-form__extra
+              .tender-form__input.tender-form__extra-text.input
+                textarea(name="message" placeholder="Сопроводительное письмо").input-item.input-item--textarea.tender-form__input-item
+              
+              label.upload.tender-form__extra-file
+                span.upload__text.tender-form__link 
+                  | Прикрепить файл
+                input(type="file", name="file", multiple, accept="image/*, .pdf, .doc, .docx").upload__input
+            
+            .tender-form__bottom
+              label.checkbox.tender-form__bottom-privacy
+                input(type="checkbox" name="privacy" required).checkbox__input
+                span.checkbox__checkmark
+                span.checkbox__text.tender-form__link
+                  | согласен с политикой конфиденциальности
+              
+              +button(page.content.form.button, 'button')
+                
+
+          
