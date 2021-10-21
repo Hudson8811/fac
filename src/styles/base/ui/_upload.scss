@@ -1,0 +1,20 @@
+.upload {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 54px;
+  padding-right: 70px;
+  background: url("../images/file.png") no-repeat right center;
+  background-size: 54px 54px;
+  cursor: pointer;
+
+  &__input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    visibility: hidden;
+  }
+}

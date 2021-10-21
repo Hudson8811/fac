@@ -1,0 +1,47 @@
+.checkbox {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-left: 56px;
+  cursor: pointer;
+  user-select: none;
+
+  input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+  }
+
+  &__checkmark {
+    position: absolute;
+    top: 3px;
+    left: 0;
+    width: 42px;
+    height: 20px;
+    background-color: #ffbf85;
+    border: 1px solid $orange;
+    border-radius: 100px;
+    transition: 0.4s linear;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: -4px;
+      left: -2px;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      border: 1px solid $orange;
+      background-color: #ffbf85;
+      transition: $transition;
+    }
+  }
+
+  & input:checked ~ .checkbox__checkmark {
+    &::after {
+      transform: translateX(18px);
+      background-color: $orange;
+    }
+  }
+}

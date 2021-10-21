@@ -1,0 +1,23 @@
+.input {
+  font-size: 14px;
+  line-height: 15px;
+  letter-spacing: -0.2px;
+
+  &-item {
+    width: 100%;
+    padding: 29px 0;
+    border: none;
+    border-bottom: 3px solid rgba(166, 180, 191, 0.32);
+
+    &:focus {
+      outline: none;
+      border-color: $midnight;
+    }
+
+    &--textarea {
+      resize: vertical;
+      min-height: 76px;
+      max-height: 211px;
+    }
+  }
+}
