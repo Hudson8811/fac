@@ -1,0 +1,53 @@
+.list {
+  max-width: 579px;
+  font-size: 18px;
+  line-height: 24px;
+
+  &__item {
+    position: relative;
+    min-height: 54px;
+    padding: 16px 0 0 68px;
+
+    &:not(:last-child) {
+      margin-bottom: 16px;
+    }
+
+    &--big {
+      &:not(:last-child) {
+        margin-bottom: 32px;
+      }
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -2px;
+      width: 54px;
+      height: 54px;
+      background: url("../images/point.png") no-repeat;
+      background-size: contain;
+    }
+
+    &--sub {
+      position: relative;
+      margin-top: 8px;
+      padding-left: 24px;
+
+      &:first-child {
+        margin-top: 16px;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 8px;
+        left: 0;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: $orange;
+      }
+    }
+  }
+}

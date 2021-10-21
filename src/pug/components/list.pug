@@ -1,0 +1,11 @@
+mixin list(list, className, biggerMargins)
+  ul.list(class=className)
+    if list.title
+      #{list.title.tag?list.title.tag:'h3'}.list__title.margin-bottom=list.title.text
+    
+    each item in list.items
+      li.list__item(class=biggerMargins?'list__item--big':'')=item.text
+        if item.sub
+          ul.list--sub
+            each sub in item.sub
+              li.list__item--sub=sub

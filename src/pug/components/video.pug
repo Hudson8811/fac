@@ -1,0 +1,8 @@
+mixin video(link, image, className)
+  a(href=link?link:'#' class=className).video
+    img(src=image.src, alt=image.alt?image.alt:'').image.video__poster
+
+    .video__play
+      .video__play-overlay
+      svg(width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg")
+        path(d="M13.6033 7.30242L1.15889 0.10243C0.917778 -0.0367692 0.623778 -0.0335693 0.385778 0.10883C0.146222 0.25283 0 0.51523 0 0.800029V15.2C0 15.4848 0.146222 15.7472 0.385778 15.8912C0.507111 15.9632 0.642444 16 0.777778 16C0.908444 16 1.04067 15.9664 1.15889 15.8976L13.6033 8.69761C13.8476 8.55521 14 8.28962 14 8.00002C14 7.71042 13.8476 7.44482 13.6033 7.30242Z" fill="#272936")
