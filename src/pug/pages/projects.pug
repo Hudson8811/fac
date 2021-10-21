@@ -1,0 +1,75 @@
+extends ../layouts/default
+
+block vars
+  -
+    const page = {
+      title: 'Проекты',
+      content: {
+        title: 'Проекты',
+        items: [
+          {
+            full: true,
+            title: 'Саратовский подшипниковый завод',
+            text: 'Саратовская обл, Саратов г, Энтузиастов пр-кт, дом №64, строение а',
+            tag: '1234 м²',
+            image: 'images/projects/projects-1.jpg',
+          },
+          {
+            title: 'Саратовский подшипниковый завод',
+            text: 'Саратовская обл, Саратов г, Энтузиастов пр-кт, дом №64, строение а',
+            tag: '1234 м²',
+            image: 'images/projects/projects-2.jpg',
+          },
+          {
+            title: 'Саратовский подшипниковый завод',
+            text: 'Саратовская обл, Саратов г, Энтузиастов пр-кт, дом №64, строение а',
+            tag: '1234 м²',
+            image: 'images/projects/projects-3.jpg',
+          },
+          {
+            full: true,
+            title: 'Саратовский подшипниковый завод',
+            text: 'Саратовская обл, Саратов г, Энтузиастов пр-кт, дом №64, строение а',
+            tag: '1234 м²',
+            image: 'images/projects/projects-4.jpg',
+          },
+          {
+            title: 'Саратовский подшипниковый завод',
+            text: 'Саратовская обл, Саратов г, Энтузиастов пр-кт, дом №64, строение а',
+            tag: '1234 м²',
+            image: 'images/projects/projects-5.jpg',
+          },
+          {
+            title: 'Саратовский подшипниковый завод',
+            text: 'Саратовская обл, Саратов г, Энтузиастов пр-кт, дом №64, строение а',
+            tag: '1234 м²',
+            image: 'images/projects/projects-6.jpg',
+          },
+          {
+            full: true,
+            title: 'Саратовский подшипниковый завод',
+            text: 'Саратовская обл, Саратов г, Энтузиастов пр-кт, дом №64, строение а',
+            tag: '1234 м²',
+            image: 'images/projects/projects-7.jpg',
+          },
+        ],
+      },
+    };
+
+block main
+  section.projects.section--first
+    .container
+      .content
+        +title(page.content.title, 'projects__title')
+
+        .projects-wrapper
+          each item in page.content.items
+            .projects-item(class=item.full?'projects-item--full':'')
+              span.projects-item__tag=item.tag
+
+              .projects-item__image
+                img(src=item.image alt=item.title).image
+
+              .projects-item__info
+                span.projects-item__info-title=item.title
+                p.projects-item__info-text=item.text
