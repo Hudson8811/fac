@@ -1,0 +1,42 @@
+.contacts {
+  padding-bottom: 136px;
+
+  a {
+    text-decoration: none;
+  }
+
+  &-info {
+    font-size: 18px;
+    line-height: 24px;
+
+    &__item {
+      &:not(:last-child) {
+        margin-bottom: 16px;
+      }
+    }
+  }
+
+  &__text {
+    margin-bottom: 16px;
+  }
+
+  &__info {
+    margin-bottom: 32px;
+  }
+
+  &__button {
+    display: inline-block;
+    margin-bottom: 64px;
+    padding: 11px 42px;
+  }
+
+  &__map {
+    width: 100%;
+    height: 580px;
+
+    iframe {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
