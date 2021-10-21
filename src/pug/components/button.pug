@@ -1,5 +1,6 @@
 mixin button(specs, type = 'link')
+  - const combinedClass = `${specs.class?specs.class:''}${specs.class&&specs.color?' ':''}${specs.color?'button--'+specs.color:''}`
   if (type === 'link')
-    a(href=specs.link?specs.link:'#' target=specs.target?specs.target:'_self' class=specs.class?specs.class:'').button=specs.text
+    a(href=specs.link?specs.link:'#' target=specs.target?specs.target:'_self' class=combinedClass).button=specs.text
   else if (type === 'button')
-    button(type=specs.type class=specs.class?specs.class:'').button=specs.text
+    button(type=specs.type class=combinedClass).button=specs.text
