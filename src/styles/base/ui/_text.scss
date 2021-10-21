@@ -15,4 +15,10 @@
       background-color: $orange;
     }
   }
+
+  &--small {
+    font-weight: 900;
+    font-size: 21px;
+    line-height: 30px;
+  }
 }
