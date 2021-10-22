@@ -9,7 +9,7 @@
 
   &-item {
     position: relative;
-    margin: 0 6.5px 13px;
+    margin: 0 6.5px 12px;
     width: calc((50% - 13px));
     border-radius: 13px;
     overflow: hidden;
@@ -49,7 +49,7 @@
         &__info {
           position: absolute;
           bottom: 0;
-          padding-bottom: 23px;
+          padding-bottom: 20px;
           color: $white;
           background-color: transparent;
 
@@ -87,13 +87,12 @@
     &__info {
       position: relative;
       z-index: 1;
-      max-width: 371px;
       padding: 18px 13px 15px 15px;
       background-color: $white;
 
       &-title {
         display: block;
-        margin-bottom: 8px;
+        margin-bottom: 9px;
         min-height: 40px;
         font-family: $ubuntu;
         font-weight: 700;

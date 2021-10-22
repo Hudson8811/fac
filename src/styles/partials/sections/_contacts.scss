@@ -11,17 +11,17 @@
 
     &__item {
       &:not(:last-child) {
-        margin-bottom: 16px;
+        margin-bottom: 13px;
       }
     }
   }
 
   &__text {
-    margin-bottom: 16px;
+    margin-bottom: 10px;
   }
 
   &__info {
-    margin-bottom: 32px;
+    margin-bottom: 27px;
   }
 
   &__button {

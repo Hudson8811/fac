@@ -23,9 +23,9 @@ block vars
           ],
         },
         list2: {
-          title: 'В отчете клиент видит: ',
+          title: { text: 'В отчете клиент видит: ' },
           items: [
-            { text: 'Показатели по всем выполненным работам  (количество, процент выполнения в срок).' },
+            { text: 'Показатели по всем выполненным работам  (количество, процент&nbsp;выполнения в срок).' },
             { text: 'информацию по результатам многоуровневых проверок качества работ: ', sub: [ 'менеджментом компании-партнера', ' совместных с представителем клиента', 'клиентом (подписывается бланк обратной связи)' ] },
             { text: 'Предложения по улучшениям на проекте, основанные на аналитике.' },
           ],
@@ -41,16 +41,16 @@ block main
         +title('Контроль качества', 'technologies-item__margin--64', 'h1', { src: 'images/quality/quality-symbol.png', alt: 'ISO' } )
         
         //- Текст до изображения
-        +text(page.content.text1, 'margin-bottom')
+        +text(page.content.text1, 'technologies-item__text')
 
         //- Изображение
         +picture(page.content.img1, 'margin-bottom')
 
         //- Текст после изображения
-        +text(page.content.text2, 'margin-bottom--64')
+        +text(page.content.text2, 'technologies-item__text--2')
 
         //- Первая внутрення секция
-        +title('Единые стандарты ', 'margin-bottom--64', 'h2')
+        +title('Единые стандарты ', 'margin-bottom--62', 'h2')
         
         +text(page.content.text3, 'margin-bottom')   
 
@@ -64,13 +64,13 @@ block main
         +list(page.content.list1, 'margin-bottom--128')
 
         //- Третья внутрення секция. Со списком
-        +title('Отчеты и обратная связь ', 'margin-bottom--64', 'h2')
+        +title('Отчеты и обратная связь ', 'margin-bottom--62', 'h2')
 
-        +text(page.content.text6, 'margin-bottom')   
+        +text(page.content.text6, 'margin-bottom--23')   
 
-        +text(page.content.text7, 'margin-bottom', 'small')  
+        +text(page.content.text7, 'margin-bottom--39', 'small')  
 
-        +list(page.content.list2, 'margin-bottom--64', true)
+        +list(page.content.list2, 'technologies-item__list--2 margin-bottom--62', true)
 
         //- Видео
         +video("#", { src: 'images/quality/quality-2.jpg' }) 

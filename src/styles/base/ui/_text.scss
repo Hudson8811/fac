@@ -1,6 +1,9 @@
 .text {
   &--highlighted {
     position: relative;
+    display: inline-block;
+    margin-right: 7px;
+    padding-left: 6px;
     font-weight: 900;
     color: $white;
 

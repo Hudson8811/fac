@@ -1,6 +1,6 @@
 .technologies {
   &__text {
-    margin-bottom: 53px;
+    margin-bottom: 50px;
   }
 
   &-cards {
@@ -20,7 +20,7 @@
   &-card {
     position: relative;
     min-height: 399px;
-    padding: 43px 24px 43px 32px;
+    padding: 36px 24px 43px 32px;
     border-radius: 12px;
     text-decoration: none;
     background-color: $white;
@@ -50,7 +50,7 @@
     }
 
     &__title {
-      margin-bottom: 24px;
+      margin-bottom: 31px;
       font-family: $ubuntu;
       font-weight: 700;
       font-size: 18px;
@@ -67,6 +67,12 @@
     &__description {
       font-size: 14px;
       line-height: 20px;
+
+      @include max("lg") {
+        br {
+          display: none;
+        }
+      }
     }
   }
 }

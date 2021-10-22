@@ -1,3 +1,42 @@
 .technologies-item {
-  padding-bottom: 155px;
+  padding-bottom: 169px;
+
+  &__text {
+    margin-bottom: 25px;
+
+    &--2 {
+      margin-bottom: 56px;
+    }
+
+    .text--highlighted {
+      margin-left: 3px;
+      margin-right: 5px;
+      padding-left: 12px;
+      padding-right: 16px;
+    }
+  }
+
+  &__list {
+    &--2 {
+      max-width: 632px;
+
+      .list {
+        &__item {
+          padding-top: 14px;
+
+          &--big {
+            &:not(:last-child) {
+              margin-bottom: 34px;
+            }
+          }
+
+          &--sub {
+            &:first-child {
+              margin-top: 12px;
+            }
+          }
+        }
+      }
+    }
+  }
 }

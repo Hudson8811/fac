@@ -8,10 +8,10 @@ header.header
           -
             const navlist = [
               { link: '#', text: 'О компании' },
-              { link: '#', text: 'Технологии' },
-              { link: '#', text: 'Проекты' },
-              { link: '#', text: 'Партнерам' },
-              { link: '#', text: 'Контакты' },
+              { link: './technologies.html', text: 'Технологии' },
+              { link: './projects.html', text: 'Проекты' },
+              { link: './partners.html', text: 'Партнерам' },
+              { link: './contacts.html', text: 'Контакты' },
             ];
           each item in navlist
             a(href=item.link).header-link.header__nav-link=item.text
