@@ -3,8 +3,24 @@ extends ../layouts/default
 block vars
 	-
 		const page = {
-			title: 'Главная'
+			title: 'Разводящая',
+			content: {
+				list: {
+					items: [
+						{ text: `<a href="./technologies.html">Технологии</a>` },
+						{ text: `<a href="./quality.html">Технология</a>` },
+						{ text: `<a href="./tender.html">Тендеры</a>` },
+						{ text: `<a href="./partners.html">Партнеры</a>` },
+						{ text: `<a href="./contacts.html">Контакты</a>` },
+						{ text: `<a href="./projects.html">Проекты</a>` },
+					],
+				}
+			},
 		};
 
 block main
 	.container
+		.content
+			+title('Разводящая', 'margin-bottom--64')
+
+			+list(page.content.list, 'margin-bottom--64')

@@ -1,4 +1,8 @@
 body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
   font-family: $roboto;
   font-weight: 400;
   font-style: normal;
@@ -6,6 +10,21 @@ body {
   line-height: 40px;
   color: $midnight;
   background-color: $greyLight;
+
+  @include max("md") {
+    font-size: 26px;
+    line-height: 32px;
+  }
+
+  @include max("sm") {
+    font-size: 22px;
+    line-height: 26px;
+  }
+
+  @include max("xs") {
+    font-size: 16px;
+    line-height: 20px;
+  }
 }
 
 a {
@@ -27,14 +46,43 @@ a {
     padding: 0 22% 0 17%;
   }
 
+  @include max("md") {
+    min-width: auto;
+    padding: 0 10%;
+  }
+
+  @include max("sm") {
+    padding: 0 50px;
+  }
+
+  @include max("xs") {
+    padding: 0 20px;
+  }
+
   &--wide {
     padding: 0 90px;
+
+    @include max("lg") {
+      padding: 0 5%;
+    }
+
+    @include max("sm") {
+      padding: 0 50px;
+    }
+
+    @include max("xs") {
+      padding: 0 20px;
+    }
   }
 }
 
 .section {
   &--first {
     margin-top: 132px;
+
+    @include max("sm") {
+      margin-top: 110px;
+    }
   }
 }
 

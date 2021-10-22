@@ -7,6 +7,11 @@
     font-weight: 900;
     color: $white;
 
+    @include max("sm") {
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+
     &::before {
       content: "";
       position: absolute;
@@ -16,6 +21,11 @@
       z-index: -1;
       height: 100%;
       background-color: $orange;
+
+      @include max("sm") {
+        left: -4px !important;
+        right: -4px !important;
+      }
     }
   }
 
@@ -23,5 +33,15 @@
     font-weight: 900;
     font-size: 21px;
     line-height: 30px;
+
+    @include max("sm") {
+      font-size: 16px;
+      line-height: 19px;
+    }
+
+    @include max("sm") {
+      font-size: 14px;
+      line-height: 16px;
+    }
   }
 }

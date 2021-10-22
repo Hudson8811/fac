@@ -1,6 +1,10 @@
 .technologies-item {
   padding-bottom: 169px;
 
+  @include max("sm") {
+    padding-bottom: 80px;
+  }
+
   &__text {
     margin-bottom: 25px;
 

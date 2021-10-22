@@ -13,6 +13,14 @@
     }
   }
 
+  @include max("md") {
+    height: 440px;
+  }
+
+  @include max("xs") {
+    height: 350px;
+  }
+
   &__poster {
     transition: $transition;
   }

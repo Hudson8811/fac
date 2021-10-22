@@ -4,23 +4,29 @@ header.header
         a(href="./").header__logo
           img(src="images/logo.png" alt="Facilicom — facility services 27 лет").image
 
-        nav.header__nav
-          -
-            const navlist = [
-              { link: '#', text: 'О компании' },
-              { link: './technologies.html', text: 'Технологии' },
-              { link: './projects.html', text: 'Проекты' },
-              { link: './partners.html', text: 'Партнерам' },
-              { link: './contacts.html', text: 'Контакты' },
-            ];
-          each item in navlist
-            a(href=item.link).header-link.header__nav-link=item.text
-        
-        .header__controls
-          +button( { text: 'Пригласить на тендер', class: 'header__controls-button' } )
+        .header__menu  
+          nav.header__nav
+            -
+              const navlist = [
+                { link: '#', text: 'О компании' },
+                { link: './technologies.html', text: 'Технологии' },
+                { link: './projects.html', text: 'Проекты' },
+                { link: './partners.html', text: 'Партнерам' },
+                { link: './contacts.html', text: 'Контакты' },
+              ];
+            each item in navlist
+              a(href=item.link).header-link.header__nav-link=item.text
+          
+          .header__controls
+            +button( { text: 'Пригласить на тендер', class: 'header__controls-button' } )
 
-          a(href="#").header-link.header-link--small.header__controls-link.header__controls-login
-            | Вход
+            a(href="#").header-link.header-link--small.header__controls-link.header__controls-login
+              | Вход
 
-          a(href="#" data-lang=ru).header-link.header-link--small.header__controls-link.header__controls-langs
-            | Ru
+            a(href="#" data-lang=ru).header-link.header-link--small.header__controls-link.header__controls-langs
+              | Ru
+
+        .header__burger
+          span.header__burger-line
+          span.header__burger-line
+          span.header__burger-line

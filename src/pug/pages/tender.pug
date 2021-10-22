@@ -53,11 +53,11 @@ block main
   section.tender.section--first
     .container
       .content
-        +title(page.content.title, 'tender__title')
+        +title(page.content.title, 'tender__title margin-bottom--title')
         
-        +text(page.content.text, 'tender__text')
+        +text(page.content.text, 'tender__text margin-bottom--text')
 
-        p.tender__description!=page.content.description
+        p.tender__description.margin-bottom--block!=page.content.description
       
       .tender-contacts
         .content

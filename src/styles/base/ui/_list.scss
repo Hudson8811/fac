@@ -3,17 +3,33 @@
   font-size: 18px;
   line-height: 24px;
 
+  @include max("sm") {
+    font-size: 14px;
+    line-height: 16px;
+  }
+
   &__title {
     margin-bottom: 44px;
     font-size: 24px;
     line-height: 24px;
     letter-spacing: -0.015em;
+
+    @include max("sm") {
+      margin-bottom: 20px;
+      font-size: 16px;
+      line-height: 19px;
+    }
   }
 
   &__item {
     position: relative;
     min-height: 54px;
     padding: 16px 0 0 68px;
+
+    @include max("sm") {
+      min-height: 35px;
+      padding: 10px 0 0 45px !important;
+    }
 
     &:not(:last-child) {
       margin-bottom: 17px;
@@ -22,6 +38,10 @@
     &--big {
       &:not(:last-child) {
         margin-bottom: 32px;
+
+        @include max("sm") {
+          margin-bottom: 20px !important;
+        }
       }
     }
 
@@ -34,12 +54,21 @@
       height: 54px;
       background: url("../images/point.png") no-repeat;
       background-size: contain;
+
+      @include max("sm") {
+        width: 35px;
+        height: 35px;
+      }
     }
 
     &--sub {
       position: relative;
       margin-top: 8px;
       padding-left: 24px;
+
+      @include max("sm") {
+        padding-left: 16px;
+      }
 
       &:first-child {
         margin-top: 16px;
@@ -54,6 +83,10 @@
         height: 8px;
         border-radius: 50%;
         background-color: $orange;
+
+        @include max("sm") {
+          top: 4px;
+        }
       }
     }
   }

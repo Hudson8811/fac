@@ -6,6 +6,10 @@
   &-cards {
     margin: 0 -9px 119px;
 
+    @include max("sm") {
+      margin-bottom: 80px;
+    }
+
     &__wrapper {
       display: flex;
       flex-wrap: wrap;
@@ -14,6 +18,11 @@
     &__item {
       margin: 0 9px 18px;
       width: calc(50% - 18px);
+
+      @include max("sm") {
+        width: 100%;
+        margin-bottom: 20px;
+      }
     }
   }
 
@@ -30,6 +39,11 @@
       .technologies-card__bg {
         transform: scale(1.1) translate(-4%, -4%);
       }
+    }
+
+    @include max("sm") {
+      min-height: 360px;
+      padding: 30px 20px 40px;
     }
 
     &__bg {
@@ -61,6 +75,11 @@
         display: block;
         font-size: 32px;
         line-height: 32px;
+
+        @include max("sm") {
+          font-size: 26px;
+          line-height: 26px;
+        }
       }
     }
 

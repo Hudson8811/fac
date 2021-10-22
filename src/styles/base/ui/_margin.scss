@@ -28,4 +28,22 @@
   &--128 {
     margin-bottom: 128px;
   }
+
+  &--title {
+    @include max("sm") {
+      margin-bottom: 32px !important;
+    }
+  }
+
+  &--text {
+    @include max("sm") {
+      margin-bottom: 20px !important;
+    }
+  }
+
+  &--block {
+    @include max("sm") {
+      margin-bottom: 40px !important;
+    }
+  }
 }

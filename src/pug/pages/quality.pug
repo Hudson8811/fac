@@ -40,39 +40,39 @@ block main
         +back('./technologies.html')
 
         //- Заголовок
-        +title('Контроль качества', 'technologies-item__margin--64', 'h1', { src: 'images/quality/quality-symbol.png', alt: 'ISO' } )
+        +title('Контроль качества', 'technologies-item__margin--64 margin-bottom--title', 'h1', { src: 'images/quality/quality-symbol.png', alt: 'ISO' } )
         
         //- Текст до изображения
-        +text(page.content.text1, 'technologies-item__text')
+        +text(page.content.text1, 'technologies-item__text margin-bottom--text')
 
         //- Изображение
-        +picture(page.content.img1, 'margin-bottom')
+        +picture(page.content.img1, 'margin-bottom margin-bottom--text')
 
         //- Текст после изображения
-        +text(page.content.text2, 'technologies-item__text--2')
+        +text(page.content.text2, 'technologies-item__text--2 margin-bottom--block')
 
         //- Первая внутрення секция
-        +title('Единые стандарты ', 'margin-bottom--62', 'h2')
+        +title('Единые стандарты ', 'margin-bottom--62 margin-bottom--title', 'h2')
         
-        +text(page.content.text3, 'margin-bottom')   
+        +text(page.content.text3, 'margin-bottom margin-bottom--text')   
 
-        +text(page.content.text4, 'margin-bottom', 'small')     
+        +text(page.content.text4, 'margin-bottom margin-bottom--text', 'small')     
 
-        +text(page.content.text5, 'margin-bottom--128', 'small')
+        +text(page.content.text5, 'margin-bottom--128 margin-bottom--block', 'small')
 
         //- Вторая внутрення секция. Со списком
-        +title('Система контроля качества', 'margin-bottom--64', 'h2')
+        +title('Система контроля качества', 'margin-bottom--64 margin-bottom--title', 'h2')
 
-        +list(page.content.list1, 'margin-bottom--128')
+        +list(page.content.list1, 'margin-bottom--128 margin-bottom--block')
 
         //- Третья внутрення секция. Со списком
-        +title('Отчеты и обратная связь ', 'margin-bottom--62', 'h2')
+        +title('Отчеты и обратная связь ', 'margin-bottom--62 margin-bottom--title', 'h2')
 
-        +text(page.content.text6, 'margin-bottom--23')   
+        +text(page.content.text6, 'margin-bottom--23 margin-bottom--text')   
 
-        +text(page.content.text7, 'margin-bottom--39', 'small')  
+        +text(page.content.text7, 'margin-bottom--39 margin-bottom--text', 'small')  
 
-        +list(page.content.list2, 'technologies-item__list--2 margin-bottom--62', true)
+        +list(page.content.list2, 'technologies-item__list--2 margin-bottom--62 margin-bottom--text', true)
 
         //- Видео
         +video("#", { src: 'images/quality/quality-2.jpg' }) 

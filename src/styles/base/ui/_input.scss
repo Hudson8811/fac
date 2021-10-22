@@ -9,6 +9,10 @@
     border: none;
     border-bottom: 3px solid rgba(166, 180, 191, 0.32);
 
+    @include max("sm") {
+      padding: 15px 0;
+    }
+
     &:focus {
       outline: none;
       border-color: $midnight;
@@ -18,6 +22,11 @@
       resize: vertical;
       min-height: 76px;
       max-height: 211px;
+
+      @include max("sm") {
+        resize: none;
+        min-height: 75px;
+      }
     }
   }
 }

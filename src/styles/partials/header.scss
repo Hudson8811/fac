@@ -27,6 +27,10 @@
   &-wrapper {
     display: flex;
     align-items: center;
+
+    @include max("lg") {
+      justify-content: space-between;
+    }
   }
 
   &-link {
@@ -45,32 +49,111 @@
     width: 129px;
     overflow: hidden;
     margin-right: 51px;
+
+    @include max("lg") {
+      margin-right: 10px;
+      flex-basis: 10%;
+    }
+
+    @include max("md") {
+      flex-basis: auto;
+    }
+
+    @include max("sm") {
+      width: 80px;
+    }
+  }
+
+  &__menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include max("lg") {
+      flex-basis: 90%;
+    }
+
+    @include max("md") {
+      display: none;
+    }
   }
 
   &__nav {
     display: flex;
     align-items: center;
 
+    @include max("lg") {
+      margin-left: auto;
+    }
+
     &-link {
       &:not(:last-child) {
         margin-right: 63px;
+
+        @include max("lg") {
+          margin-right: 30px;
+        }
       }
     }
   }
 
   &__controls {
-    margin-left: auto;
+    margin-left: 111px;
     display: flex;
     align-items: center;
+
+    @include max("lg") {
+      margin-left: auto;
+    }
 
     &-button {
       margin-right: 31px;
       min-width: 224px;
+
+      @include max("lg") {
+        min-width: auto;
+        margin-right: 20px;
+      }
     }
 
     &-link {
       &:not(:last-child) {
         margin-right: 45px;
+
+        @include max("lg") {
+          margin-right: 20px;
+        }
+      }
+    }
+  }
+
+  &__burger {
+    display: none;
+    width: 35px;
+    cursor: pointer;
+
+    @include max("md") {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+
+    &-line {
+      width: 100%;
+      height: 4px;
+      border-radius: 5px;
+      background-color: $midnight;
+
+      &:not(:last-child) {
+        margin-bottom: 6px;
+      }
+
+      &:nth-child(2) {
+        width: 66%;
+      }
+
+      &:nth-child(3) {
+        width: 33%;
       }
     }
   }

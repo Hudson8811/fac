@@ -64,7 +64,7 @@ block main
 
         .projects-wrapper
           each item in page.content.items
-            .projects-item(class=item.full?'projects-item--full':'')
+            a(href=item.link?item.link:'#' class=item.full?'projects-item--full':'').projects-item
               span.projects-item__tag=item.tag
 
               .projects-item__image

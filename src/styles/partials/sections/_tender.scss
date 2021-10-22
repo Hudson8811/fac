@@ -3,6 +3,14 @@
     position: relative;
     padding-bottom: 92px;
 
+    @include max("md") {
+      padding-bottom: 162px;
+    }
+
+    @include max("sm") {
+      padding-bottom: 80px;
+    }
+
     &::before {
       content: "";
       position: absolute;
@@ -22,6 +30,10 @@
     border-radius: 12px;
     background-color: $white;
 
+    @include max("sm") {
+      padding: 30px 15px;
+    }
+
     &__title {
       margin-bottom: 36px;
       font-weight: 700;
@@ -40,8 +52,24 @@
       margin-bottom: 20px;
       width: calc(50% - 15px);
 
+      @include max("sm") {
+        width: calc(50% - 10px);
+      }
+
+      @include max("xs") {
+        width: 100%;
+      }
+
       &:nth-child(2n) {
         margin-left: 30px;
+
+        @include max("sm") {
+          margin-left: 20px;
+        }
+
+        @include max("xs") {
+          margin-left: 0;
+        }
       }
     }
 
@@ -58,9 +86,19 @@
       align-items: center;
       margin-bottom: 12px;
 
+      @include max("sm") {
+        flex-direction: column-reverse;
+      }
+
       &-file {
         margin-left: auto;
         margin-bottom: 20px;
+      }
+
+      &-text {
+        @include max("sm") {
+          width: 100%;
+        }
       }
     }
 
@@ -68,6 +106,24 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+
+      @include max("md") {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    &__button {
+      min-width: 227px;
+
+      @include max("md") {
+        align-self: flex-end;
+        margin-top: 20px;
+      }
+
+      @include max("sm") {
+        align-self: center;
+      }
     }
   }
 

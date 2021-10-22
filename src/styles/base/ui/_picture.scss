@@ -3,4 +3,12 @@
   height: 556px;
   border-radius: 12px;
   overflow: hidden;
+
+  @include max("md") {
+    height: 440px;
+  }
+
+  @include max("xs") {
+    height: 350px;
+  }
 }

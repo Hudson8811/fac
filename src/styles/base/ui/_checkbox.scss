@@ -38,6 +38,13 @@
     }
   }
 
+  &__text {
+    @include max("sm") {
+      font-size: 14px;
+      line-height: 15px;
+    }
+  }
+
   & input:checked ~ .checkbox__checkmark {
     &::after {
       transform: translateX(18px);

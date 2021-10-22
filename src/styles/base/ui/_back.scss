@@ -1,6 +1,6 @@
 .back {
-  position: absolute;
-  top: 17px;
+  position: fixed;
+  top: 148px;
   left: 129px;
   display: flex;
   align-items: center;
@@ -24,6 +24,22 @@
     left: 5%;
   }
 
+  @include max("md") {
+    left: 1%;
+  }
+
+  @include max("sm") {
+    top: 130px;
+    left: 10px;
+  }
+
+  @include max("xs") {
+    position: static;
+    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 16px;
+  }
+
   &__arrow {
     display: flex;
     align-items: center;
@@ -34,5 +50,25 @@
     border-radius: 50%;
     border: 1px solid $heather;
     transition: $transition;
+
+    @include max("sm") {
+      width: 25px;
+      height: 25px;
+
+      svg {
+        width: 6px;
+        height: 9px;
+      }
+    }
+  }
+
+  &__text {
+    @include max("md") {
+      display: none;
+    }
+
+    @include max("xs") {
+      display: inline;
+    }
   }
 }
