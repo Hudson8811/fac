@@ -1,0 +1,38 @@
+.back {
+  position: absolute;
+  top: 17px;
+  left: 129px;
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 18px;
+  letter-spacing: -0.015em;
+  text-decoration: none;
+  color: $heather;
+  transition: $transition;
+
+  @include hover {
+    color: $midnight;
+
+    .back__arrow {
+      border-color: $midnight;
+    }
+  }
+
+  @include max("lg") {
+    left: 5%;
+  }
+
+  &__arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 8px;
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    border: 1px solid $heather;
+    transition: $transition;
+  }
+}
