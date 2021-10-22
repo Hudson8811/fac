@@ -18,6 +18,12 @@
     border-radius: 13px;
     overflow: hidden;
 
+    @include hover {
+      .projects-item__image {
+        transform: scale(1.1);
+      }
+    }
+
     @include max("sm") {
       width: 100%;
       height: auto;
@@ -98,6 +104,7 @@
     &__image {
       width: 100%;
       height: 277px;
+      transition: $transition;
 
       @include max("sm") {
         position: absolute;
