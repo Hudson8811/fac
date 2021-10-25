@@ -1,4 +1,17 @@
 .text {
+  &--big-date {
+    font-weight: 300;
+    font-size: 90px;
+    line-height: 65px;
+
+    @include max(md) {
+      font-size: 70px;
+    }
+
+    @include max(xs) {
+      font-size: 50px;
+    }
+  }
   &--highlighted {
     position: relative;
     display: inline-block;
