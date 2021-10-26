@@ -1,90 +1,93 @@
 extends ../layouts/default
 
 block vars
-  -
-    const page = {
-      title: 'О компании',
-      content: {
-        title: 'О компании',
-        dates: {
-          dateBlocks: [
-            {
-              date: '1994',
-              textBlocks: [
-                {type: 'full', text: '<span class="text--highlighted">FACILICOM</span> был основан в марте 1994 года как компания по эксплуатации недвижимости, в том числе техническому обслуживанию и уборке.'}, 
-                {type: 'full', text: 'Среди первых клиентов - заводы Ford и Coca Cola в Беларуси, где оказывался весь объем услуг.'}
-              ]
-            },
-            {
-              date: '1997',
-              textBlocks: [
-                {type: 'full', text: '<span class="text--highlighted">Через три года</span> после основания, в результате успешного развития, компания, которая начинала как локальный игрок, выходит на рынок России.'}
-              ]
-            },
-            {
-              date: '2002',
-              textBlocks: [
-                {type: 'full', text: 'В эпоху активного развития рынка ритейла <span class="text--highlighted">Facilicom</span> находит оптимальные технологии, способные решить задачи для динамично растущих торговых сетей. И уже в 2004 году компания получила контракт на выполнение работ во всех магазинах сетей «Седьмой Континент» и «Перекресток» (X5 Retail Group). '},
-                {type: 'half', text: 'Опыт компании привлек других крупных заказчиков из этой отрасли - представителей международных и федеральных сетей «Ашан», «Леруа Мерлен», «Копейка», Metro Cash&Carry, «Азбука Вкуса».'},
-                {type: 'half', text: 'В это же время компания активно развивалась и в других направлениях. В портфеле компании   - десятки клиентов из сегментов офисной недвижимости, торговых центров, промышленных предприятий.</br>Но именно благодаря группе клиентов рынка ритейла компания выстраивает и совершенствует бизнес-процессы, позволяющие в дальнейшем масштабировать уже любую услугу на объемы любого клиента федерального уровня.'},
-              ]
-            },
-            {
-              date: '2008',
-              textBlocks: [
-                {type: 'full', text: 'После экономического кризиса 2008 года оптимальное соотношение цена-качество стало очень важно для любого бизнеса. Но именно для банковского сегмента опыт  <span class="text--highlighted">Facilicom</span> оказался наиболее востребованным.'},
-                {type: 'half', text: 'Клиентами становятся крупнейшие федеральные банки, которым нужна качественная техническая эксплуатация и уборка отделений по всей России.'},
-                {type: 'half', text: 'В портфеле компании - Альфа Банк, Юникредит Банк (Международный Московский банк - до 2014 года), БинБанк, Юниаструм Банк и множество других.'},
-              ]
-            },
-            {
-              date: '2010',
-              textBlocks: [
-                {type: 'full', text: 'С  момента создания компания осознавала важность своего ПО.  (чтобы обеспечить качественный сервис и дать кач услугу) Facilicom вкладывает значительное время и ресурсы в собственную <span class="text--highlighted">IT систему.</span>'},
-                {type: 'half', text: 'Созданный продукт F24 объединяет самые современные технологии управления активами предприятия (EAM) с управлением заявками, себестоимостью и потоком работ.'},
-                {type: 'half', text: 'F24 контролирует процесс оказания услуги и ее качество, способствует повышению эффективности людей. </br>Именно разработка F24 позволила компании  масштабировать опыт на любые федеральные проекты, для которых  требуются самые нестандартные услуги.'},
-                {type: 'half', text: 'С одинаковой эффективностью выстроен, например,  процесс обслуживания дата-центра крупнейшего банка или уборки борта самолета.'},
-              ]
-            },
-            {
-              date: '2015',
-              textBlocks: [
-                {type: 'full', text: 'Facilicom удерживает позицию среди лидеров рынка. С платформой <span class="text--highlighted">Facilicom -  F24,</span> работают много-численные партнеры и клиенты, получая доступ ко всем ее возможностям.'},
-              ]
-            },
-          ]
-        },
-        title2: 'Mы работаем во всех городах России',
-        title3: 'Галерея',
-      },
-    };
+	-
+		const page = {
+			title: 'О компании',
+			content: {
+				title: 'О компании',
+				dates: {
+					dateBlocks: [
+						{
+							date: '1994',
+							textBlocks: [
+								{type: 'full', text: '<span class="text--highlighted">FACILICOM</span> был основан в марте 1994 года как компания по эксплуатации недвижимости, в том числе техническому обслуживанию и уборке.'}, 
+								{type: 'full', text: 'Среди первых клиентов - заводы Ford и Coca Cola в Беларуси, где оказывался весь объем услуг.'}
+							]
+						},
+						{
+							date: '1997',
+							textBlocks: [
+								{type: 'full', text: '<span class="text--highlighted">Через три года</span> после основания, в результате успешного развития, компания, которая начинала как локальный игрок, выходит на рынок России.'}
+							]
+						},
+						{
+							date: '2002',
+							textBlocks: [
+								{type: 'full', text: 'В эпоху активного развития рынка ритейла <span class="text--highlighted">Facilicom</span> находит оптимальные технологии, способные решить задачи для динамично растущих торговых сетей. И уже в 2004 году компания получила контракт на выполнение работ во всех магазинах сетей «Седьмой Континент» и «Перекресток» (X5 Retail Group). '},
+								{type: 'half', text: 'Опыт компании привлек других крупных заказчиков из этой отрасли - представителей международных и федеральных сетей «Ашан», «Леруа Мерлен», «Копейка», Metro Cash&Carry, «Азбука Вкуса».'},
+								{type: 'half', text: 'В это же время компания активно развивалась и в других направлениях. В портфеле компании   - десятки клиентов из сегментов офисной недвижимости, торговых центров, промышленных предприятий.</br>Но именно благодаря группе клиентов рынка ритейла компания выстраивает и совершенствует бизнес-процессы, позволяющие в дальнейшем масштабировать уже любую услугу на объемы любого клиента федерального уровня.'},
+							]
+						},
+						{
+							date: '2008',
+							textBlocks: [
+								{type: 'full', text: 'После экономического кризиса 2008 года оптимальное соотношение цена-качество стало очень важно для любого бизнеса. Но именно для банковского сегмента опыт  <span class="text--highlighted">Facilicom</span> оказался наиболее востребованным.'},
+								{type: 'half', text: 'Клиентами становятся крупнейшие федеральные банки, которым нужна качественная техническая эксплуатация и уборка отделений по всей России.'},
+								{type: 'half', text: 'В портфеле компании - Альфа Банк, Юникредит Банк (Международный Московский банк - до 2014 года), БинБанк, Юниаструм Банк и множество других.'},
+							]
+						},
+						{
+							date: '2010',
+							textBlocks: [
+								{type: 'full', text: 'С  момента создания компания осознавала важность своего ПО.  (чтобы обеспечить качественный сервис и дать кач услугу) Facilicom вкладывает значительное время и ресурсы в собственную <span class="text--highlighted">IT систему.</span>'},
+								{type: 'half', text: 'Созданный продукт F24 объединяет самые современные технологии управления активами предприятия (EAM) с управлением заявками, себестоимостью и потоком работ.'},
+								{type: 'half', text: 'F24 контролирует процесс оказания услуги и ее качество, способствует повышению эффективности людей. </br>Именно разработка F24 позволила компании  масштабировать опыт на любые федеральные проекты, для которых  требуются самые нестандартные услуги.'},
+								{type: 'half', text: 'С одинаковой эффективностью выстроен, например,  процесс обслуживания дата-центра крупнейшего банка или уборки борта самолета.'},
+							]
+						},
+						{
+							date: '2015',
+							textBlocks: [
+								{type: 'full', text: 'Facilicom удерживает позицию среди лидеров рынка. С платформой <span class="text--highlighted">Facilicom -  F24,</span> работают много-численные партнеры и клиенты, получая доступ ко всем ее возможностям.'},
+							]
+						},
+					]
+				},
+				title2: 'Mы работаем во всех городах России',
+				title3: 'Галерея',
+			},
+		};
 
 block main
-  section.about.section--first
-    .container
-      .content
-        +title(page.content.title, 'about__title margin-bottom--64', 'h1' )
-        each item in page.content.dates.dateBlocks
-          .about__date-block
-            .text.text--big-date.margin-bottom--16.about__date= item.date
-            each block in item.textBlocks
-              if block.type === 'half'
-                p.text.margin-bottom--23.about__text--half!= block.text
-              else
-                p.text.margin-bottom--42!= block.text
-        +title(page.content.title2, 'about__title margin-bottom--64', 'h1' )
-        .about__map
-        section.about-galery
-          +title(page.content.title3, 'about__title margin-bottom--31', 'h1' )
-          .about__controls
-            button.about-button-prev
-            .swiper-pagination.about__pagination
-            button.about-button-next
-          .about__slider.swiper-container
-            .swiper-wrapper 
-              .swiper-slide 
-                +video("#", { src: 'images/quality/quality-2.jpg' })
-              .swiper-slide 
-                +video("#", { src: 'images/about/about1.jpg' })
-              .swiper-slide 
-                +video("#", { src: 'images/quality/quality-2.jpg' })
+	section.about.section--first
+		.container
+			.content
+				section.history
+					+title(page.content.title, 'about__title margin-bottom--64', 'h1' )
+					each item in page.content.dates.dateBlocks
+						.about__date-block
+							.text.text--big-date.margin-bottom--16.about__date= item.date
+							each block in item.textBlocks
+								if block.type === 'half'
+									p.text.margin-bottom--23.about__text--half!= block.text
+								else
+									p.text.margin-bottom--42!= block.text
+				section.map
+					+title(page.content.title2, 'about__title margin-bottom--64', 'h1' )
+					include ../components/map
+
+				section.galery
+					+title(page.content.title3, 'about__title margin-bottom--31', 'h1' )
+					.about__controls
+						button.about-button-prev
+						.swiper-pagination.about__pagination
+						button.about-button-next
+					.about__slider.swiper-container
+						.swiper-wrapper 
+							.swiper-slide 
+								+video("#", { src: 'images/quality/quality-2.jpg' })
+							.swiper-slide 
+								+video("#", { src: 'images/about/about1.jpg' })
+							.swiper-slide 
+								+video("#", { src: 'images/quality/quality-2.jpg' })
