@@ -35,11 +35,44 @@
     background-color: $white;
     overflow: hidden;
 
-    @include hover {
-      .technologies-card__bg {
-        transform: scale(1.1) translate(-4%, -4%);
+    @media (min-width: 1025px) {
+      &:hover {
+        .technologies-card__bg--1,
+        .technologies-card__bg--2 {
+          transform: scale(1.2) translate(-4%, -4%) rotate(6deg);
+        }
+
+        // .technologies-card__bg4-line,
+        // .technologies-card__bg5-line {
+        //   animation: goUp 3s ease 1.5;
+        //   animation-delay: -1.5s;
+        // }
+
+        .technologies-card__bg--3 {
+          transform: scale(1.2) rotate(35deg);
+        }
       }
     }
+
+    &__mouse-in,
+    &__mouse-out {
+      .technologies-card__bg4-line,
+      .technologies-card__bg5-line {
+        animation: goUp 3s ease 1.5;
+        animation-delay: -1.5s;
+      }
+    }
+
+    // @include hover {
+    // .technologies-card__bg--1,
+    // .technologies-card__bg--2 {
+    //   transform: scale(1.2) translate(-4%, -4%) rotate(12deg);
+    // }
+
+    // .technologies-card__bg img {
+    //   animation-play-state: running;
+    // }
+    // }
 
     @include max("sm") {
       min-height: 360px;
@@ -51,10 +84,331 @@
       z-index: 0;
       bottom: 0;
       right: 0;
-      transition: $transition;
+      transition: 0.9s ease;
+
+      // &--1 {
+      //   bottom: -70%;
+      //   right: -40%;
+
+      //   img {
+      //     animation: rotate 30s linear infinite;
+      //   }
+      // }
+
+      // &--2 {
+      //   bottom: -73%;
+      //   right: -50%;
+
+      //   img {
+      //     animation: rotate 30s linear infinite;
+      //   }
+      // }
+
+      &--3 {
+        bottom: -50%;
+        transition: 1.5s ease;
+      }
 
       &--4 {
-        width: 244px;
+        width: 100%;
+        height: 159px;
+      }
+    }
+
+    &__bg4 {
+      &--1 {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 100%;
+        height: 120px;
+      }
+
+      &-line {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        display: inline-block;
+        width: 2px;
+        background-color: #89488f;
+        // animation: goUp 3s ease 1.5;
+        // animation-play-state: paused;
+
+        &--1 {
+          right: 197px;
+          width: 0.5px;
+          height: 120px;
+          animation-delay: -1.5s;
+        }
+
+        &--2 {
+          right: 182px;
+          width: 0.8px;
+          height: 113px;
+          animation-delay: -1.45s;
+        }
+
+        &--3 {
+          right: 167px;
+          width: 1px;
+          height: 106px;
+          animation-delay: -1.4s;
+        }
+
+        &--4 {
+          right: 152px;
+          width: 1.3px;
+          height: 100px;
+          animation-delay: -1.35s;
+        }
+
+        &--5 {
+          right: 137px;
+          width: 1.6px;
+          height: 93px;
+          animation-delay: -1.3s;
+        }
+
+        &--6 {
+          right: 122px;
+          width: 2px;
+          height: 87px;
+          animation-delay: -1.25s;
+        }
+
+        &--7 {
+          right: 107px;
+          width: 2.3px;
+          height: 80px;
+          animation-delay: -1.2s;
+        }
+
+        &--8 {
+          right: 92px;
+          width: 2.6px;
+          height: 73px;
+          animation-delay: -1.15s;
+        }
+
+        &--9 {
+          right: 77px;
+          width: 2.9px;
+          height: 67px;
+          animation-delay: -1.1s;
+        }
+
+        &--10 {
+          right: 62px;
+          width: 3.2px;
+          height: 60px;
+          animation-delay: -1s;
+        }
+
+        &--11 {
+          right: 47px;
+          width: 3.5px;
+          height: 54px;
+          animation-delay: -0.95s;
+        }
+
+        &--12 {
+          right: 32px;
+          width: 3.8px;
+          height: 48px;
+          animation-delay: -0.9s;
+        }
+      }
+    }
+
+    &__bg5 {
+      position: absolute;
+      right: 35px;
+      bottom: 0;
+      width: 100%;
+      height: 120px;
+
+      &-line {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        display: inline-block;
+        width: 2px;
+        background-color: #ff3f02;
+        // animation-play-state: none;
+
+        &--1 {
+          bottom: -40px;
+          right: 253px;
+          width: 3.8px;
+          height: 60px;
+          background-color: #ff8f2a;
+          animation-delay: -1.5s;
+        }
+
+        &--2 {
+          bottom: -40px;
+          right: 238px;
+          width: 3.8px;
+          height: 60px;
+          background-color: #ff8f2a;
+          animation-delay: -1.45s;
+        }
+
+        &--3 {
+          bottom: -40px;
+          right: 223px;
+          width: 3.8px;
+          height: 60px;
+          background-color: #ff8f2a;
+          animation-delay: -1.4s;
+        }
+
+        &--4 {
+          bottom: -40px;
+          right: 208px;
+          width: 3.8px;
+          height: 60px;
+          background-color: #ff8f2a;
+          animation-delay: -1.35s;
+        }
+
+        &--5 {
+          right: 197px;
+          width: 0.5px;
+          height: 120px;
+          animation-delay: -1.5s;
+        }
+
+        &--6 {
+          bottom: -40px;
+          right: 193px;
+          width: 3.8px;
+          height: 60px;
+          background-color: #ff8f2a;
+          animation-delay: -1.3s;
+        }
+
+        &--7 {
+          right: 182px;
+          width: 0.8px;
+          height: 113px;
+          animation-delay: -1.45s;
+        }
+
+        &--8 {
+          bottom: -40px;
+          right: 178px;
+          width: 3.8px;
+          height: 60px;
+          background-color: #ff8f2a;
+          animation-delay: -1.25s;
+        }
+
+        &--9 {
+          right: 167px;
+          width: 1px;
+          height: 106px;
+          animation-delay: -1.4s;
+        }
+
+        &--10 {
+          bottom: -40px;
+          right: 164px;
+          width: 3.8px;
+          height: 60px;
+          background-color: #ff8f2a;
+          animation-delay: -1.2s;
+        }
+
+        &--11 {
+          right: 152px;
+          width: 1.3px;
+          height: 100px;
+          animation-delay: -1.35s;
+        }
+
+        &--12 {
+          bottom: -40px;
+          right: 150px;
+          width: 3.8px;
+          height: 60px;
+          background-color: #ff8f2a;
+          animation-delay: -1.15s;
+        }
+
+        &--13 {
+          right: 137px;
+          width: 1.6px;
+          height: 93px;
+          animation-delay: -1.3s;
+        }
+
+        &--14 {
+          right: 122px;
+          width: 2px;
+          height: 87px;
+          animation-delay: -1.25s;
+        }
+
+        &--15 {
+          right: 107px;
+          width: 2.3px;
+          height: 80px;
+          animation-delay: -1.2s;
+        }
+
+        &--16 {
+          right: 92px;
+          width: 2.6px;
+          height: 73px;
+          animation-delay: -1.15s;
+        }
+
+        &--17 {
+          right: 77px;
+          width: 2.9px;
+          height: 67px;
+          animation-delay: -1.1s;
+        }
+
+        &--18 {
+          right: 62px;
+          width: 3.2px;
+          height: 60px;
+          animation-delay: -1s;
+        }
+
+        &--19 {
+          right: 47px;
+          width: 3.5px;
+          height: 54px;
+          animation-delay: -0.95s;
+        }
+
+        &--20 {
+          right: 32px;
+          width: 3.8px;
+          height: 48px;
+          animation-delay: -0.9s;
+        }
+
+        &--21 {
+          bottom: -40px;
+          right: 135px;
+          width: 2.8px;
+          height: 60px;
+          background-color: #ff8f2a;
+          animation-delay: -1.1s;
+        }
+
+        &--22 {
+          bottom: -40px;
+          right: 121px;
+          width: 1.8px;
+          height: 60px;
+          background-color: #ff8f2a;
+          animation-delay: -1.05s;
+        }
       }
     }
 
@@ -93,5 +447,29 @@
         }
       }
     }
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes goUp {
+  0% {
+    transform: translateY(50%);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-30%);
+    opacity: 0;
   }
 }

@@ -24,7 +24,7 @@ block vars
             link: './quality.html',
             title: 'Персонал',
             description: 'Наш бизнес - это люди.<br>Мы понимаем, что клиент получит максимальное качество услуги, когда с ним работают вовлеченные сотрудники - главная ценность сервисной компании.',
-            image: 'images/technologies/tech-card-3.png',
+            image: 'images/technologies/3.png',
           },
           {
             link: './quality.html',
@@ -47,15 +47,46 @@ block main
         .technologies-cards
           .technologies-cards__wrapper
             each card, index in page.content.cards
-              a(href=card.link).technologies-card.technologies-cards__item
-                .technologies-card__bg(class=`technologies-card__bg--${index+1}`)
-                  img(src=card.image, alt="").image
+              if index === 2
+                a(href=card.link).technologies-card.technologies-cards__item
+                  .technologies-card__bg(class=`technologies-card__bg--${index+1}`)
+                    img(src=card.image, alt="").image
 
-                .technologies-card__wrapper
-                  h2.technologies-card__title
-                    span.technologies-card__title--f
-                      | F24.
-                    span.technologies-card__title=card.title
-                  
-                  p.technologies-card__description!=card.description
+                  .technologies-card__wrapper
+                    h2.technologies-card__title
+                      span.technologies-card__title--f
+                        | F24.
+                      span.technologies-card__title=card.title
+                    
+                    p.technologies-card__description!=card.description
+              else if index === 3
+                a(href=card.link).technologies-card.technologies-cards__item
+                  .technologies-card__bg(class=`technologies-card__bg--${index+1}`)
+                    .technologies-card__bg4--1
+                      each val in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+                        span.technologies-card__bg4-line(class=`technologies-card__bg4-line--${val}`)
+
+                    .technologies-card__bg5
+                      each val in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22]
+                        span.technologies-card__bg5-line(class=`technologies-card__bg5-line--${val}`)
+
+                  .technologies-card__wrapper
+                    h2.technologies-card__title
+                      span.technologies-card__title--f
+                        | F24.
+                      span.technologies-card__title=card.title
+                    
+                    p.technologies-card__description!=card.description
+              else
+                a(href=card.link).technologies-card.technologies-cards__item
+                  .technologies-card__bg(class=`technologies-card__bg--${index+1}`)
+                    img(src=card.image, alt="").image
+
+                  .technologies-card__wrapper
+                    h2.technologies-card__title
+                      span.technologies-card__title--f
+                        | F24.
+                      span.technologies-card__title=card.title
+                    
+                    p.technologies-card__description!=card.description
 
