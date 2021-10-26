@@ -60,24 +60,12 @@
       }
     }
 
-    &__mouse-in,
-    &__mouse-out {
+    &__mouse-in {
       .technologies-card__bg4-line {
         animation: goUp 3s ease 1.5;
         animation-delay: -1.5s;
       }
     }
-
-    // @include hover {
-    // .technologies-card__bg--1,
-    // .technologies-card__bg--2 {
-    //   transform: scale(1.2) translate(-4%, -4%) rotate(12deg);
-    // }
-
-    // .technologies-card__bg img {
-    //   animation-play-state: running;
-    // }
-    // }
 
     @include max("sm") {
       min-height: 360px;
@@ -90,24 +78,6 @@
       bottom: 0;
       right: 0;
       transition: 0.9s ease;
-
-      // &--1 {
-      //   bottom: -70%;
-      //   right: -40%;
-
-      //   img {
-      //     animation: rotate 30s linear infinite;
-      //   }
-      // }
-
-      // &--2 {
-      //   bottom: -73%;
-      //   right: -50%;
-
-      //   img {
-      //     animation: rotate 30s linear infinite;
-      //   }
-      // }
 
       &--3 {
         bottom: -50%;
@@ -136,8 +106,6 @@
         display: inline-block;
         width: 2px;
         background-color: #89488f;
-        // animation: goUp 3s ease 1.5;
-        // animation-play-state: paused;
 
         &--1 {
           right: 197px;
@@ -240,7 +208,6 @@
         width: 2px;
         background-color: #ff3f02;
         transition: 1.5s ease;
-        // animation-play-state: none;
 
         &--1 {
           bottom: -40px;
