@@ -14,38 +14,38 @@ window.addEventListener("DOMContentLoaded", function () {
     },
   });
 
-  if (document.querySelector('.technologies-card__bg--4')) {
-    const cardBg = document.querySelector('.technologies-card__bg--4'),
-      card = cardBg.closest('.technologies-card');
+  // if (document.querySelector('.technologies-card__bg--4')) {
+  //   const cardBg = document.querySelector('.technologies-card__bg--4'),
+  //     card = cardBg.closest('.technologies-card');
 
-    card.addEventListener('mouseenter', () => {
-      if (!cardBg.classList.contains('js-animation-run')) {
-        cardBg.classList.remove('technologies-card__mouse-out');
+  //   card.addEventListener('mouseenter', () => {
+  //     if (!cardBg.classList.contains('js-animation-run')) {
+  //       cardBg.classList.remove('technologies-card__mouse-out');
 
-        setTimeout(() => {
-          cardBg.classList.add('technologies-card__mouse-in');
+  //       setTimeout(() => {
+  //         cardBg.classList.add('technologies-card__mouse-in');
 
-          // cardBg.classList.add('js-animation-run');
-          // setTimeout(() => {
-          //   cardBg.classList.remove('js-animation-run');
-          // }, 3);
-        }, 1);
-      }
-    });
+  //         // cardBg.classList.add('js-animation-run');
+  //         // setTimeout(() => {
+  //         //   cardBg.classList.remove('js-animation-run');
+  //         // }, 3);
+  //       }, 1);
+  //     }
+  //   });
 
-    card.addEventListener('mouseleave', () => {
-      if (!cardBg.classList.contains('js-animation-run')) {
-        cardBg.classList.remove('technologies-card__mouse-in');
+  //   card.addEventListener('mouseleave', () => {
+  //     if (!cardBg.classList.contains('js-animation-run')) {
+  //       cardBg.classList.remove('technologies-card__mouse-in');
 
-        setTimeout(() => {
-          cardBg.classList.add('technologies-card__mouse-out');
+  //       setTimeout(() => {
+  //         cardBg.classList.add('technologies-card__mouse-out');
 
-          // cardBg.classList.add('js-animation-run');
-          // setTimeout(() => {
-          //   cardBg.classList.remove('js-animation-run');
-          // }, 3);
-        }, 1);
-      }
-    });
-  }
+  //         // cardBg.classList.add('js-animation-run');
+  //         // setTimeout(() => {
+  //         //   cardBg.classList.remove('js-animation-run');
+  //         // }, 3);
+  //       }, 1);
+  //     }
+  //   });
+  // }
 });
