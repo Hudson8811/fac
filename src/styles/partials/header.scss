@@ -11,6 +11,7 @@
   line-height: 18px;
   letter-spacing: -0.015em;
   background-color: $white;
+  white-space: nowrap;
 
   &::after {
     content: "";
