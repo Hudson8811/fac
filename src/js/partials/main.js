@@ -25,10 +25,10 @@ window.addEventListener("DOMContentLoaded", function () {
         setTimeout(() => {
           cardBg.classList.add('technologies-card__mouse-in');
 
-          cardBg.classList.add('js-animation-run');
-          setTimeout(() => {
-            cardBg.classList.remove('js-animation-run');
-          }, 3);
+          // cardBg.classList.add('js-animation-run');
+          // setTimeout(() => {
+          //   cardBg.classList.remove('js-animation-run');
+          // }, 3);
         }, 1);
       }
     });
@@ -40,10 +40,10 @@ window.addEventListener("DOMContentLoaded", function () {
         setTimeout(() => {
           cardBg.classList.add('technologies-card__mouse-out');
 
-          cardBg.classList.add('js-animation-run');
-          setTimeout(() => {
-            cardBg.classList.remove('js-animation-run');
-          }, 3);
+          // cardBg.classList.add('js-animation-run');
+          // setTimeout(() => {
+          //   cardBg.classList.remove('js-animation-run');
+          // }, 3);
         }, 1);
       }
     });

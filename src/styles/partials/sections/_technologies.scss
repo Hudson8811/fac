@@ -37,7 +37,10 @@
 
     @media (min-width: 1025px) {
       &:hover {
-        .technologies-card__bg--1,
+        .technologies-card__bg--1 {
+          transform: scale(1.2) translate(-4%, -4%) rotate(-6deg);
+        }
+
         .technologies-card__bg--2 {
           transform: scale(1.2) translate(-4%, -4%) rotate(6deg);
         }
