@@ -19,19 +19,33 @@ window.addEventListener("DOMContentLoaded", function () {
       card = cardBg.closest('.technologies-card');
 
     card.addEventListener('mouseenter', () => {
-      cardBg.classList.remove('technologies-card__mouse-out');
+      if (!cardBg.classList.contains('js-animation-run')) {
+        cardBg.classList.remove('technologies-card__mouse-out');
 
-      setTimeout(() => {
-        cardBg.classList.add('technologies-card__mouse-in');
-      }, 1);
+        setTimeout(() => {
+          cardBg.classList.add('technologies-card__mouse-in');
+
+          cardBg.classList.add('js-animation-run');
+          setTimeout(() => {
+            cardBg.classList.remove('js-animation-run');
+          }, 3);
+        }, 1);
+      }
     });
 
     card.addEventListener('mouseleave', () => {
-      cardBg.classList.remove('technologies-card__mouse-in');
+      if (!cardBg.classList.contains('js-animation-run')) {
+        cardBg.classList.remove('technologies-card__mouse-in');
 
-      setTimeout(() => {
-        cardBg.classList.add('technologies-card__mouse-out');
-      }, 1);
+        setTimeout(() => {
+          cardBg.classList.add('technologies-card__mouse-out');
+
+          cardBg.classList.add('js-animation-run');
+          setTimeout(() => {
+            cardBg.classList.remove('js-animation-run');
+          }, 3);
+        }, 1);
+      }
     });
   }
 });
