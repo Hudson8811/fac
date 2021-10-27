@@ -2,7 +2,8 @@ window.addEventListener('load', () => {
   const hero = document.querySelector('.hero');
 
   if (hero) {
-    const asides = hero.querySelectorAll('.hero__aside');
+    const asideLeft = hero.querySelector('.hero__aside--left');
+    const asideRight = hero.querySelector('.hero__aside--right');
     const mainDefault = hero.querySelector('.hero__main-default');
     const mainProjects = hero.querySelector('.hero__main-projects');
     const mainProjectsImage = mainProjects.querySelector('.hero__main-projects-image');
@@ -19,69 +20,131 @@ window.addEventListener('load', () => {
 
     let active = hero.querySelector('.hero__main-projects-image img.active');
     let intervalId = null;
-    let isImageAnimated = false;
+    let isMouseEnter = false;
+    let step = 0;
 
-    asides.forEach(it => {
-      it.addEventListener('mouseenter', e => {
-        if (it.classList.contains('hero__aside--left')) {
-          hero.classList.add(HeroClass.LEFT);
+    asideLeft.addEventListener('mouseenter', () => {
+      isMouseEnter = true;
+      hero.classList.add(HeroClass.LEFT);
+      step = 1;
+
+      mainDefault.ontransitionend = () => {
+        mainDefault.ontransitionend = null;
+        step = 2;
+
+        if (step == 2 && isMouseEnter) {
+          mainPlatform.classList.add('is-shown');
         }
+      }
+    });
 
-        if (it.classList.contains('hero__aside--right')) {
-          hero.classList.add(HeroClass.RIGHT);
+    asideLeft.addEventListener('mouseleave', () => {
+      isMouseEnter = false;
 
-          mainDefault.ontransitionend = () => {
-            mainDefault.ontransitionend = null;
+      if (step == 2 && !isMouseEnter) {
+        mainPlatform.classList.remove('is-shown');
 
-            mainProjects.classList.add('is-shown');
+        mainPlatform.ontransitionend = () => {
+          mainPlatform.ontransitionend = null;
+          step = 1;
 
-            mainProjectsImage.ontransitionend = () => {
-              mainProjectsImage.ontransitionend = null;
-              clearInterval(intervalId);
-              intervalId = setInterval(() => {
-                  if (active.nextElementSibling) {
-                    active.classList.remove('active');
-                    active.nextElementSibling.classList.add('active');
-                    active = active.nextElementSibling;
-                  } else {
-                    clearInterval(intervalId);
-                  }
-                }, 1000 / 60);
-            }
+          if (step == 1 && !isMouseEnter) {
+            hero.classList.remove(HeroClass.LEFT);
           }
         }
-      });
+      }
 
-      it.addEventListener('mouseleave', e => {
-        if (it.classList.contains('hero__aside--left')) {
-          hero.classList.remove(HeroClass.LEFT)
+      if (step == 1 && !isMouseEnter) {
+        hero.classList.remove(HeroClass.LEFT);
+      }
+    });
+
+    asideRight.addEventListener('mouseenter', () => {
+      isMouseEnter = true;
+
+      hero.classList.add(HeroClass.RIGHT);
+      step = 1;
+
+      mainDefault.ontransitionend = () => {
+        step = 2;
+
+        if (step === 2 && isMouseEnter) {
+          mainDefault.ontransitionend = null;
+
+          mainProjects.classList.add('is-shown');
+
+          mainProjectsImage.ontransitionend = () => {
+            step = 3;
+            if (step === 3 && isMouseEnter) {
+              mainProjectsImage.ontransitionend = null;
+
+              clearInterval(intervalId);
+
+              intervalId = setInterval(() => {
+                if (active.nextElementSibling) {
+                  active.classList.remove('active');
+                  active.nextElementSibling.classList.add('active');
+                  active = active.nextElementSibling;
+                } else {
+                  clearInterval(intervalId);
+                }
+              }, 1000 / 60);
+            }
+
+          }
         }
-        if (it.classList.contains('hero__aside--right')) {
-          //if (isImageAnimated) {
-            clearInterval(intervalId);
-          
-            intervalId = setInterval(() => {
-              if (active.previousElementSibling) {
-                active.classList.remove('active');
-                active.previousElementSibling.classList.add('active');
-                active = active.previousElementSibling;
-              } else {
-                clearInterval(intervalId);
-                mainProjects.classList.remove('is-shown');
 
-                mainProjects.ontransitionend = () => {
-                  mainProjects.ontransitionend = null;
-                  
-                  hero.classList.remove(HeroClass.RIGHT)
-                  
+      }
+      
+    });
+
+    asideRight.addEventListener('mouseleave', e => {
+      isMouseEnter = false;
+      
+      if (step === 3 && !isMouseEnter) {
+        clearInterval(intervalId);
+      
+        intervalId = setInterval(() => {
+          if (active.previousElementSibling) {
+            active.classList.remove('active');
+            active.previousElementSibling.classList.add('active');
+            active = active.previousElementSibling;
+          } else {
+            clearInterval(intervalId);
+            step = 2;
+
+            if (step === 2 && !isMouseEnter) {
+              mainProjects.classList.remove('is-shown');
+              
+              mainProjects.ontransitionend = () => {
+                mainProjects.ontransitionend = null;
+                step = 1;
+
+                if (step === 1 && !isMouseEnter) {
+                  hero.classList.remove(HeroClass.RIGHT);
                 }
               }
-            }, 1000 / 60);
-          //}
+            }
+          }
+        }, 1000 / 60);
+      }
 
+      if (step === 2 && !isMouseEnter) {
+        mainProjects.classList.remove('is-shown');
+        
+        mainProjects.ontransitionend = () => {
+          mainProjects.ontransitionend = null;
+          step = 1;
 
+          if (step === 1 && !isMouseEnter) {
+            hero.classList.remove(HeroClass.RIGHT);
+          }
         }
-      });
+      }
+
+      if (step === 1 && !isMouseEnter) {
+        hero.classList.remove(HeroClass.RIGHT);
+      }
     });
   }
 

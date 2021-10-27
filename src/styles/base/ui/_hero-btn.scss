@@ -12,6 +12,10 @@
       margin-left: 16px;
       margin-right: 0;
       transform: scale(-1, 1);
+
+      @include max(xxl) {
+        margin-left: vw(16);
+      }
     }
   }
 
@@ -26,19 +30,35 @@
     border-radius: 50%;
     align-self: center;
 
+    @include max(xxl) {
+      width: vw(54);
+      height: vw(54);
+      margin-right: vw(16);
+    }
+
     svg {
       display: block;
       fill: $midnight;
       align-self: center;
       margin-left: -2px;
+
+      @include max(xxl) {
+        width: vw(10);
+        height: vw(15);
+        margin-left: vw(-2);
+      }
     }
   }
 
   &__text {
     font-size: 18px;
     line-height: 1;
-    letter-spacing: 0.4px;
+    letter-spacing: 0.22em;
     align-self: center;
     transition: opacity 0.3s ease;
+
+    @include max(xxl) {
+      font-size: vw(18);
+    }
   }
 }
