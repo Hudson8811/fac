@@ -1,0 +1,69 @@
+extends ../layouts/default
+
+block vars
+  -
+    const page = {
+      title: 'Проект',
+      content: {
+        title: 'Название проекта пишется здесь',
+        headingImageBlock: {
+          image: 'images/projects/projects-1.jpg',
+          tagImage: 'images/projects/lukoil.png',
+          title: 'Вологодская обл, Череповец г, Мира ул, дом №30',
+          description: ['Площадь : 275 000 м²','Услуга: комплекное обслуживание, клиниг, обслужвание инженерных систем зданий,   техническое обслуживание здания.'],
+        },
+        subtitle: 'Подзаголовок проекта',
+        text: 'В эпоху активного развития рынка ритейла Facilicom находит оптимальные технологии, способные решить задачи для динамично растущих торговых сетей.',
+        textSmall1: 'И уже в 2004 году компания получила контракт на выполнение работ во всех магазинах сетей «Седьмой Континент» и «Перекресток» (X5 Retail Group).',
+        textSmall2: 'Опыт компании привлек других крупных заказчиков из этой отрасли - представителей международных и федеральных сетей «Ашан», «Леруа Мерлен», «Копейка», Metro Cash&Carry, «Азбука Вкуса».',
+        textBold: 'И уже в 2004 году компания получила контракт на выполнение работ во всех магазинах сетей «Седьмой Континент» и «Перекресток» (X5 Retail Group).',
+        list1: {
+          title: { text: 'Политика открытости' },
+          items: [
+            { text: 'Гарантирует адекватную стоимость контракта на обслуживание объекта' },
+            { text: 'Дает возможность  проанализировать структуру расходов, сделать выводы относительно ее соответствия рыночным реалиям и компетентности подрядчика.' },
+            { text: 'Позволяет проводить  постоянную оптимизацию расходов.' },
+          ],
+        },
+        list2: {
+          title: { text: 'Политика открытости' },
+          items: [
+            { text: 'Гарантирует адекватную стоимость контракта на обслуживание объекта' },
+            { text: 'Дает возможность  проанализировать структуру расходов, сделать выводы относительно ее соответствия рыночным реалиям и компетентности подрядчика.' },
+            { text: 'Позволяет проводить  постоянную оптимизацию расходов.' },
+          ],
+        },
+        bottomImg: { src: "images/projects/project-page.jpg", alt: "Концептуальное здание" }
+      },
+    };
+
+block main
+  section.project.section--first
+    .container
+      .content
+        +back('./projects.html')
+        +title(page.content.title, 'margin-bottom--title', 'h1')
+        .projects-item.projects-item--full.projects-item--full-width
+          span.projects-item__tag.projects-item__tag--big.projects-item__tag--white
+            img(src=page.content.headingImageBlock.tagImage, alt="lukoil")
+          .projects-item__image.projects-item__image--no-filter.projects-item__image--static.margin-bottom.margin-bottom--31
+            img(src=page.content.headingImageBlock.image alt=page.content.headingImageBlock.title).image
+
+          .projects-item__info.projects-item__info--static
+            p.text.margin-bottom.margin-bottom--31=page.content.headingImageBlock.title
+            each item in page.content.headingImageBlock.description
+              p.projects-item__info-text.projects-item__info-text--big= item
+        +title(page.content.subtitle, 'margin-bottom--31 margin-bottom--title', 'h2')
+        +text(page.content.text, 'margin-bottom--33')
+        +text(page.content.textSmall1, 'projects-item__info-text--big margin-bottom--23')
+        +text(page.content.textSmall2, 'projects-item__info-text--big margin-bottom--36')
+        +text(page.content.textBold, 'projects-item__info-text--big projects-item__info-text--bold margin-bottom margin-bottom--75')
+
+        +list(page.content.list1, 'technologies-item__list--2 margin-bottom--31 margin-bottom--text', true)
+        +list(page.content.list2, 'technologies-item__list--2 margin-bottom--64 margin-bottom--text', true)
+
+        +picture(page.content.bottomImg, 'margin-bottom margin-bottom--62')
+
+        .projects-item__footer
+          a(href="#").button.button--orange.projects-item__button
+            | Все проекты

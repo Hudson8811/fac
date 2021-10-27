@@ -1,0 +1,7 @@
+.project {
+  padding-bottom: 100px;
+
+  @include max(md) {
+    padding-bottom: 80px;
+  }
+}

@@ -10,6 +10,7 @@
 @import "base/ui";
 
 /*libs*/
+@import "base/libs/swiper-bundle.min.css";
 
 /* main */
 @import "partials/main";
@@ -25,6 +26,8 @@
 @import "partials/sections/partners";
 @import "partials/sections/contacts";
 @import "partials/sections/projects";
+@import "partials/sections/project";
 @import "partials/sections/tender";
 @import "partials/sections/technologiesItem";
 @import "partials/sections/hero";
+@import "partials/sections/about";

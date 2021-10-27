@@ -19,7 +19,7 @@
     overflow: hidden;
 
     @include hover {
-      .projects-item__image {
+      .projects-item__image:not(.projects-item__image--no-filter) {
         transform: scale(1.1);
       }
     }
@@ -66,6 +66,9 @@
               rgba(0, 0, 0, 0.75) 100%
             );
           }
+          &--static {
+            position: static;
+          }
         }
 
         &__info {
@@ -78,8 +81,20 @@
           &-title {
             color: inherit;
           }
+
+          &--static {
+            position: static;
+            color: $midnight;
+            padding: 0;
+          }
         }
       }
+    }
+
+    &--full-width {
+      height: auto;
+      margin: 0;
+      margin-bottom: 64px;
     }
 
     &__tag {
@@ -99,6 +114,40 @@
         rgba(39, 41, 54, 0.32) 0%,
         rgba(25, 22, 44, 0.32) 100%
       );
+
+      &--big {
+        top: 16px;
+        left: 16px;
+        padding: 49px 30px 44px 31px;
+        border-radius: 12px;
+
+        @include max(md) {
+          padding: 30px 20px;
+        }
+
+        @include max(sm) {
+          padding: 25px 15px;
+        }
+
+        img {
+          width: 135px;
+          height: 43px;
+
+          @include max(md) {
+            width: 102px;
+            height: 34px;
+          }
+
+          @include max(xs) {
+            width: 68px;
+            height: 23px;
+          }
+        }
+      }
+
+      &--white {
+        background: #ffffff;
+      }
     }
 
     &__image {
@@ -130,6 +179,12 @@
             rgba(0, 0, 0, 0) 0%,
             rgba(0, 0, 0, 0.75) 100%
           );
+        }
+      }
+
+      &--no-filter {
+        &::after {
+          display: none;
         }
       }
     }
@@ -166,7 +221,28 @@
       &-text {
         font-size: 14px;
         line-height: 20px;
+
+        &--big {
+          font-size: 18px;
+          line-height: 24px;
+          max-width: 589px;
+        }
+
+        &--bold {
+          font-weight: 900;
+        }
       }
+    }
+
+    &__button {
+      display: inline-flex;
+      padding: 11px 40px;
+      margin: 0 auto;
+    }
+
+    &__footer {
+      display: flex;
+      justify-content: center;
     }
   }
 
