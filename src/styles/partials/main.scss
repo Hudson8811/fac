@@ -11,6 +11,20 @@ body {
   color: $midnight;
   background-color: $greyLight;
 
+  &.homepage {
+    main {
+      display: flex;
+      //flex-direction: column;
+      //justify-content: stretch;
+      height: calc(100vh - 100px);
+      flex-grow: 1;
+
+      & > * {
+        //align-self: center;
+      }
+    }
+  }
+
   @include max("md") {
     font-size: 26px;
     line-height: 32px;

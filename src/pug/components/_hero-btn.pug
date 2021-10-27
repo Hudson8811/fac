@@ -1,0 +1,6 @@
+mixin hero-btn(text, direction, className)
+  button(class= (className ? className + " hero-btn hero-btn--" + direction : "hero-btn hero-btn--" + direction) , type="button")
+    span.hero-btn__arrow 
+      svg(width="10", height="15", viewBox="0 0 10 15" fill="none", xmlns="http://www.w3.org/2000/svg")
+        path(fill-rule="evenodd", clip-rule="evenodd", d="M9.425 1.425 8.01.01 2.38 5.64l-.01-.01L.956 7.044l.01.01-.027.028 1.415 1.414.027-.027 5.646 5.646 1.414-1.414-5.646-5.647 5.63-5.63Z")
+    span.hero-btn__text= text

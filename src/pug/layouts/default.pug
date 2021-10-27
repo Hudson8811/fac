@@ -13,7 +13,7 @@ html(lang="ru")
 
 		title= `${page.title}`
 
-	body
+	body(class= (page.isHome ? 'homepage' : ''))
 		block header
 			include ../partials/_header
 

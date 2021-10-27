@@ -4,7 +4,66 @@ block vars
 	-
 		const page = {
 			title: 'Главная',
+			isHome: true
 		};
 
+		const projects = [
+			{img: 'logo-1', title: 'Международный аэропорт <br>Домодедово', city: 'Москва', square: '275 000 м²', type: 'Услуга', text: 'Kомплексное обслуживание, клининг, обслуживание инженерных систем зданий,  техническое обслуживание здания.'},
+			{img: 'logo-2', title: 'Международный аэропорт <br>Домодедово', city: 'Москва', square: '275 000 м²', type: 'Услуга', text: 'Kомплексное обслуживание, клининг, обслуживание инженерных систем зданий,  техническое обслуживание здания.'},
+			{img: 'logo-1', title: 'Международный аэропорт <br>Домодедово', city: 'Москва', square: '275 000 м²', type: 'Услуга', text: 'Kомплексное обслуживание, клининг, обслуживание инженерных систем зданий,  техническое обслуживание здания.'}
+		]
+
 block main
-	.container
+	section.hero
+		.hero__container.container 
+			.hero__aside.hero__aside--left
+				.hero__aside-inner
+					+title('Платформа F-24', 'hero__aside-title', 'div')
+					.hero__aside-text Контроль. Отчетность. <span>Автоматизация.</span> Документооборот. Заявки.
+					.hero__aside-image 
+						img(src="images/main/f24.jpg", srcset="images/main/f24@2x.jpg 2x", width="348", height="238", alt="")
+					.hero__aside-text 
+						p С интеграцией нашего приложения вы осуществляете полный контроль и управление объектом со своего рабочего места. 
+
+						p Мы переносим все взаимодействия в цифровое пространство. 
+				+hero-btn('F-24', 'left', 'hero__aside-btn')
+			.hero__main
+				.hero__main-default
+					+title('27 лет', 'hero__title is-shifted', 'div')
+					.hero__main-text.is-shifted мы <span>разрабатываем&nbsp;решения</span> для оптимального управления объектами недвижимости
+
+					.hero__number.is-hide.__js_numbers
+						.hero__number-item
+							- let j = 0;
+							while j < 3
+								span= j
+								-j++;
+						.hero__number-item
+							- let i = 0
+							while i < 8
+								span= i
+								-i++;
+				.hero__main-projects
+					+title('Проекты', 'hero__main-projects-title', 'div')
+					.hero__main-projects-text В каждой  <span>индивидуальной&nbsp;ситуации</span> мы разрабатываем и внедряем оптимальный вариант обслуживания инженерных систем и зданий.
+					.hero__main-projects-image 
+						- let img = 0;
+						while img <= 19
+							img(class= (img === 0 ? 'active' : ''),src="images/main/projects/" + img + ".png", width="1400", height="937", alt="")
+							- img++;
+				.hero__main-platform
+					.hero__main-platform-image 
+						img(src="images/main/platforma24.png", srcset="images/main/platforma24@2x.png 2x", width="968", height="545", alt="")
+
+						.hero__main-platform-hint Следите за всеми процессами в живом режиме со смартфона или ПК
+
+			
+			.hero__aside.hero__aside--right
+				.hero__aside-inner
+					each item in projects
+						+customer-card(item)
+				+hero-btn('Проекты', 'right', 'hero__aside-btn')
+		
+		.hero__bottom 
+			.hero__bottom-left Платформа F-24
+			.hero__bottom-right Проекты

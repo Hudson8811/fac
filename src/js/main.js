@@ -2,3 +2,5 @@
 
 
 //= ./partials/main.js
+//= ./partials/hero-number.js
+//= ./partials/hero.js
