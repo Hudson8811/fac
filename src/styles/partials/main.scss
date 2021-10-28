@@ -14,13 +14,11 @@ body {
   &.homepage {
     main {
       display: flex;
-      //flex-direction: column;
-      //justify-content: stretch;
       height: calc(100vh - 100px);
       flex-grow: 1;
 
-      & > * {
-        //align-self: center;
+      @include max(sm) {
+        height: auto;
       }
     }
   }

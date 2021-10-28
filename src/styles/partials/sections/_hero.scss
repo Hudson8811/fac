@@ -3,6 +3,8 @@
 
   position: relative;
   display: flex;
+  flex-direction: column;
+  flex-grow: 1;
   width: 100%;
   //height: 100%;
   padding-top: 100px;
@@ -18,6 +20,22 @@
         transform: translateX(160px);
       }
     }
+
+    @include max(sm) {
+      #{$self}__container {
+        transform: translateX(0);
+      }
+
+      #{$self}__aside {
+        width: 100%;
+        height: auto;
+
+        &--right {
+          display: none;
+        }
+      }
+    }
+
     #{$self}__aside--left {
       #{$self}__aside-inner {
         opacity: 1;
@@ -60,6 +78,22 @@
         transform: translateX(-160px);
       }
     }
+
+    @include max(sm) {
+      #{$self}__container {
+        transform: translateX(0);
+      }
+
+      #{$self}__aside {
+        width: 100%;
+        height: auto;
+
+        &--left {
+          display: none;
+        }
+      }
+    }
+
     #{$self}__aside--right {
       #{$self}__aside-inner {
         opacity: 1;
@@ -101,19 +135,19 @@
   &__container {
     display: flex;
     max-width: 1440px; //1760px;
-    //padding-left: 90px;
-    //padding-right: 90px;
 
+    justify-content: center;
+    align-self: stretch;
     transition: transform 0.5s ease;
 
     @include max(xxll) {
       max-width: vw(1440);
     }
 
-    justify-content: center;
-
-    & > * {
-      //align-self: center;
+    @include max(sm) {
+      flex-grow: 1;
+      flex-wrap: wrap;
+      //background-color: yellow;
     }
   }
 
@@ -157,6 +191,21 @@
       max-width: calc(100% - 350px);
     }
 
+    @include max(sm) {
+      max-width: none;
+      min-height: 300px;
+      padding-top: 40px;
+      padding-left: 50px;
+      padding-right: 50px;
+      //align-self: flex-end;
+      flex-grow: 1;
+    }
+
+    @include max(xs) {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
     &-default {
       position: relative;
       //display: none;
@@ -171,6 +220,9 @@
 
       @include max(1200) {
         margin-bottom: 100px;
+      }
+      @include max(sm) {
+        margin-top: 50px;
       }
     }
 
@@ -279,6 +331,11 @@
             transform: translateY(-40px) translateX(-60px);
           }
 
+          @include max(sm) {
+            width: 100%;
+            transform: translateY(0) translateX(0);
+          }
+
           &.active {
             display: block;
           }
@@ -374,6 +431,10 @@
         #19162c 100%
       );
       opacity: 0.12;
+
+      @include max(sm) {
+        display: none;
+      }
     }
 
     &::before {
@@ -398,6 +459,10 @@
         font-size: 24px;
       }
 
+      @include max(xs) {
+        font-size: 20px;
+      }
+
       &.is-shifted {
         transform: translateX(30px);
         opacity: 0;
@@ -420,6 +485,11 @@
           padding-left: vw(10);
         }
 
+        @include max(xs) {
+          padding-left: 6px;
+          padding-right: 6px;
+        }
+
         &::before {
           content: "";
           position: absolute;
@@ -437,6 +507,10 @@
 
           @include max(1200) {
             height: 32px;
+          }
+
+          @include max(xs) {
+            height: 27px;
           }
         }
       }
@@ -463,6 +537,10 @@
     @include max(1200) {
       right: 0;
       height: 360px;
+    }
+    @include max(sm) {
+      right: 0;
+      height: 300px;
     }
 
     &.is-done {
@@ -497,6 +575,9 @@
         @include max(1200) {
           font-size: 360px;
         }
+        @include max(sm) {
+          font-size: 300px;
+        }
       }
     }
   }
@@ -517,8 +598,26 @@
       width: 160px;
     }
 
+    @include max(sm) {
+      position: relative;
+      z-index: 1;
+      width: 50%;
+      height: 60px;
+      align-self: flex-end;
+      //background-color: red;
+    }
+
+    @include max(xs) {
+    }
+
     &--left {
+      order: -1;
       justify-content: flex-end;
+
+      @include max(sm) {
+        order: 0;
+        //background-color: orange;
+      }
 
       #{$aside}-btn {
         left: 86px;
@@ -544,6 +643,10 @@
     &--right {
       justify-content: flex-start;
 
+      @include max(sm) {
+        //background-color: red;
+      }
+
       #{$aside}-btn {
         right: 86px;
 
@@ -561,6 +664,31 @@
         &::before {
           left: 0;
         }
+      }
+    }
+
+    &-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+
+      width: 32px;
+      height: 32px;
+      padding: 8px;
+      border: none;
+      background-color: $white;
+      appearance: none;
+
+      display: none;
+
+      @include max(sm) {
+        display: block;
+      }
+
+      svg {
+        display: block;
+        width: 100%;
+        height: auto;
       }
     }
 
@@ -651,6 +779,12 @@
       transform: translateY(-50%);
 
       transition: opacity 0.3s ease;
+
+      @include max(sm) {
+        top: auto;
+        bottom: 20px;
+        transform: translateY(0);
+      }
     }
   }
 
@@ -669,6 +803,7 @@
     font-weight: 900;
     white-space: nowrap;
     overflow: hidden;
+    pointer-events: none;
 
     @include max(xxll) {
       bottom: vw(-45);
