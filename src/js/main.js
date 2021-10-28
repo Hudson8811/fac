@@ -5,3 +5,6 @@
 //= ./partials/main.js
 //= ./partials/hero-number.js
 //= ./partials/hero.js
+//= ./partials/headerMenu.js
+//= ./partials/modal.js
+//= ./partials/technologiesCardAnimation.js

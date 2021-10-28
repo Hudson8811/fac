@@ -1,0 +1,7 @@
+mixin modal(modal)
+  .modal
+    .modal__overlay.js-modal-close
+    .modal__content
+      .modal__content-close.js-modal-close
+        | X
+      +form(modal.form) 
