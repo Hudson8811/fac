@@ -45,10 +45,17 @@
   }
 
   &-link {
-    background: $gradient;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
     text-decoration: none;
+    color: $metal;
+    transition: $transition;
+    // background: $metal;
+    // background-clip: text;
+    // -webkit-text-fill-color: transparent;
+    // text-decoration: none;
+
+    @include hover {
+      color: $gunmetal;
+    }
 
     &--small {
       font-size: 14px;
