@@ -1,0 +1,36 @@
+extends ../layouts/default
+
+block vars
+  -
+    const page = {
+      title: 'Политика конфиденциальности',
+      content: {
+        text1: 'Lorem ipsum dolor sit amet',
+        text2: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
+        text3: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat',
+        text4: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
+      },
+    };
+
+block main
+  section.privacy.section--first
+    .container
+      .content
+        +title('Политика конфиденциальности', 'margin-bottom--64 margin-bottom--title' )
+        +text(page.content.text1, 'margin-bottom margin-bottom--text')
+        +text(page.content.text2, 'privacy__text margin-bottom--64 margin-bottom--block', 'regular-small')
+
+        +title('At vero eos et accusam et ', 'margin-bottom--64 margin-bottom--title' )
+        +text(page.content.text3, 'margin-bottom margin-bottom--text')
+        +text(page.content.text2, 'privacy__text margin-bottom margin-bottom--text', 'regular-small')      
+        +text(page.content.text2, 'privacy__text margin-bottom margin-bottom--text', 'regular-small')      
+        +text(page.content.text4, 'privacy__text margin-bottom--64 margin-bottom--block', 'small')  
+
+        +title('At vero eos et accusam et ', 'margin-bottom--64 margin-bottom--title' )
+        +text(page.content.text3, 'margin-bottom margin-bottom--text')
+        +text(page.content.text2, 'privacy__text margin-bottom margin-bottom--text', 'regular-small')      
+        +text(page.content.text2, 'privacy__text margin-bottom--64 margin-bottom--block', 'regular-small') 
+
+        +title('At vero eos et accusam et ', 'margin-bottom--64 margin-bottom--title' )
+        +text(page.content.text2, 'privacy__text margin-bottom margin-bottom--text', 'regular-small')      
+        +text(page.content.text2, 'privacy__text', 'regular-small')                 
