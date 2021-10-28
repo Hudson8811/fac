@@ -36,6 +36,12 @@
       margin-right: vw(16);
     }
 
+    @include max(1200) {
+      width: 48px;
+      height: 48px;
+      margin-right: 12px;
+    }
+
     svg {
       display: block;
       fill: $midnight;
@@ -59,6 +65,10 @@
 
     @include max(xxll) {
       font-size: vw(18);
+    }
+
+    @include max(1200) {
+      font-size: 14px;
     }
   }
 }

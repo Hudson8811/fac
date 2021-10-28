@@ -129,6 +129,10 @@
       font-size: vw(64);
     }
 
+    @include max(1200) {
+      font-size: 56px;
+    }
+
     &.is-shifted {
       transform: translateX(-30px);
       opacity: 0;
@@ -144,21 +148,29 @@
     display: flex;
     width: 100%;
     max-width: 896px;
-    //margin-bottom: 150px;
 
     @include max(xxll) {
       max-width: vw(896);
+    }
+
+    @include max(1200) {
+      max-width: calc(100% - 350px);
     }
 
     &-default {
       position: relative;
       //display: none;
       align-self: center;
+      width: 100%;
       margin-bottom: 150px;
       transition: opacity 0.5s ease;
 
       @include max(xxll) {
         margin-bottom: vw(150);
+      }
+
+      @include max(1200) {
+        margin-bottom: 100px;
       }
     }
 
@@ -235,7 +247,8 @@
       }
 
       &-image {
-        width: 730px;
+        width: 100%;
+        max-width: 730px;
         max-height: 400px;
         pointer-events: none;
         opacity: 0;
@@ -260,6 +273,10 @@
             margin-bottom: vw(10);
             padding-left: vw(12);
             transform: translateY(-4.21875vw) translateX(-5.46875vw);
+          }
+
+          @include max(1200) {
+            transform: translateY(-40px) translateX(-60px);
           }
 
           &.active {
@@ -376,6 +393,11 @@
         font-size: vw(32);
       }
 
+      @include max(1200) {
+        max-width: 600px;
+        font-size: 24px;
+      }
+
       &.is-shifted {
         transform: translateX(30px);
         opacity: 0;
@@ -412,6 +434,10 @@
           @include max(xxll) {
             height: vw(40);
           }
+
+          @include max(1200) {
+            height: 32px;
+          }
         }
       }
     }
@@ -432,6 +458,11 @@
     @include max(xxll) {
       height: vw(500);
       right: vw(87);
+    }
+
+    @include max(1200) {
+      right: 0;
+      height: 360px;
     }
 
     &.is-done {
@@ -462,6 +493,10 @@
         @include max(xxll) {
           font-size: vw(500);
         }
+
+        @include max(1200) {
+          font-size: 360px;
+        }
       }
     }
   }
@@ -478,6 +513,10 @@
       width: vw(272);
     }
 
+    @include max(1200) {
+      width: 160px;
+    }
+
     &--left {
       justify-content: flex-end;
 
@@ -486,6 +525,10 @@
 
         @include max(xxll) {
           left: vw(86);
+        }
+
+        @include max(1200) {
+          left: 15px;
         }
       }
 
@@ -506,6 +549,10 @@
 
         @include max(xxll) {
           right: vw(86);
+        }
+
+        @include max(1200) {
+          right: 15px;
         }
       }
       #{$aside}-inner {
@@ -582,6 +629,11 @@
         padding: vw(30) vw(42);
       }
 
+      @include max(1200) {
+        min-width: 335px;
+        padding: 24px 30px;
+      }
+
       &::before {
         content: "";
         position: absolute;
@@ -600,17 +652,6 @@
 
       transition: opacity 0.3s ease;
     }
-
-    /*&:hover {
-      #{$aside}-inner {
-        transform: translateX(0);
-        opacity: 1;
-      }
-
-      #{$aside}-btn {
-        opacity: 0;
-      }
-    }*/
   }
 
   &__bottom {
@@ -635,6 +676,12 @@
       font-size: vw(322);
     }
 
+    @include max(1200) {
+      bottom: -32px;
+      height: 240px;
+      font-size: 240px;
+    }
+
     &-left {
       position: absolute;
       right: 84px;
@@ -647,6 +694,11 @@
         right: vw(84);
         bottom: vw(-15);
         transform: translateX(-10.41666666666667vw);
+      }
+
+      @include max(1200) {
+        right: 0;
+        transform: translateX(-140px);
       }
     }
 
@@ -661,6 +713,11 @@
       @include max(xxll) {
         right: vw(46);
         transform: translateX(10.41666666666667vw);
+      }
+
+      @include max(1200) {
+        right: 0;
+        transform: translateX(140px);
       }
     }
   }
