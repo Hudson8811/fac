@@ -10,6 +10,11 @@ window.addEventListener('load', () => {
       //console.log(itHeight)
       const count = it.children.length - 1;
       it.style.cssText = 'transform: translateY(' + -(count * numbersElHeight) + 'px); transition: transform 2s ease;';
+
+      it.ontransitionend = () => {
+        it.parentElement.classList.add('is-done');
+        it.removeAttribute('style');
+      }
     });
   }
 });

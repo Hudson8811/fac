@@ -8,7 +8,16 @@
   padding-top: 100px;
   overflow: hidden;
 
+  @include max(sm) {
+    padding-top: 76px;
+  }
+
   &--left {
+    @include max(1760) {
+      #{$self}__container {
+        transform: translateX(160px);
+      }
+    }
     #{$self}__aside--left {
       #{$self}__aside-inner {
         opacity: 1;
@@ -46,6 +55,11 @@
   }
 
   &--right {
+    @include max(1760) {
+      #{$self}__container {
+        transform: translateX(-160px);
+      }
+    }
     #{$self}__aside--right {
       #{$self}__aside-inner {
         opacity: 1;
@@ -90,7 +104,9 @@
     //padding-left: 90px;
     //padding-right: 90px;
 
-    @include max(xxl) {
+    transition: transform 0.5s ease;
+
+    @include max(xxll) {
       max-width: vw(1440);
     }
 
@@ -108,7 +124,7 @@
 
     transition: opacity 0.5s ease, transform 0.8s ease;
 
-    @include max(xxl) {
+    @include max(xxll) {
       margin-bottom: vw(15);
       font-size: vw(64);
     }
@@ -117,7 +133,7 @@
       transform: translateX(-30px);
       opacity: 0;
 
-      @include max(xxl) {
+      @include max(xxll) {
         transform: translateX(-1.5625vw);
       }
     }
@@ -130,7 +146,7 @@
     max-width: 896px;
     //margin-bottom: 150px;
 
-    @include max(xxl) {
+    @include max(xxll) {
       max-width: vw(896);
     }
 
@@ -141,7 +157,7 @@
       margin-bottom: 150px;
       transition: opacity 0.5s ease;
 
-      @include max(xxl) {
+      @include max(xxll) {
         margin-bottom: vw(150);
       }
     }
@@ -157,7 +173,7 @@
       pointer-events: none;
       transition: opacity 0.5s ease;
 
-      @include max(xxl) {
+      @include max(xxll) {
         padding-top: vw(25);
       }
 
@@ -192,7 +208,7 @@
         transform: translateY(20px);
         transition: opacity 0.5s ease, transform 0.5s ease;
 
-        @include max(xxl) {
+        @include max(xxll) {
           margin-bottom: vw(10);
           padding-left: vw(12);
           transform: translateY(1.041666666666667vw);
@@ -209,7 +225,7 @@
         transform: translateY(20px);
         transition: opacity 0.5s ease, transform 0.5s ease;
 
-        @include max(xxl) {
+        @include max(xxll) {
           margin-bottom: vw(24);
           padding-left: vw(12);
           font-size: vw(14);
@@ -227,7 +243,7 @@
         transition: opacity 0.5s ease, transform 0.5s ease;
         //overflow: hidden;
 
-        @include max(xxl) {
+        @include max(xxll) {
           width: vw(730);
           max-height: vw(400);
           transform: translateY(1.041666666666667vw);
@@ -240,7 +256,7 @@
           height: auto;
           transform: translateY(-81px) translateX(-105px);
 
-          @include max(xxl) {
+          @include max(xxll) {
             margin-bottom: vw(10);
             padding-left: vw(12);
             transform: translateY(-4.21875vw) translateX(-5.46875vw);
@@ -297,7 +313,7 @@
 
         filter: drop-shadow(0 22px 22px rgba(0, 0, 0, 0.06));
 
-        @include max(xxl) {
+        @include max(xxll) {
           width: vw(240);
           padding: vw(12) vw(12) vw(12) vw(17);
           font-size: vw(12);
@@ -317,7 +333,7 @@
           height: 11px;
           background-color: $orange;
 
-          @include max(xxl) {
+          @include max(xxll) {
             width: vw(11);
             height: vw(11);
             right: vw(37);
@@ -356,7 +372,7 @@
       line-height: 1.25;
       transition: opacity 0.5s ease, transform 0.8s ease;
 
-      @include max(xxl) {
+      @include max(xxll) {
         font-size: vw(32);
       }
 
@@ -364,7 +380,7 @@
         transform: translateX(30px);
         opacity: 0;
 
-        @include max(xxl) {
+        @include max(xxll) {
           transform: translateX(1.5625vw);
         }
       }
@@ -377,7 +393,7 @@
         font-weight: 900;
         color: $white;
 
-        @include max(xxl) {
+        @include max(xxll) {
           padding-right: vw(10);
           padding-left: vw(10);
         }
@@ -393,7 +409,7 @@
           height: 40px;
           background-color: $orange;
 
-          @include max(xxl) {
+          @include max(xxll) {
             height: vw(40);
           }
         }
@@ -413,9 +429,15 @@
     pointer-events: none;
     transition: opacity 0.5s ease;
 
-    @include max(xxl) {
+    @include max(xxll) {
       height: vw(500);
       right: vw(87);
+    }
+
+    &.is-done {
+      & > * {
+        align-self: flex-end;
+      }
     }
 
     &.is-hide {
@@ -437,7 +459,7 @@
         opacity: 0.03;
         flex-shrink: 0;
 
-        @include max(xxl) {
+        @include max(xxll) {
           font-size: vw(500);
         }
       }
@@ -452,7 +474,7 @@
     width: 272px;
     //max-height: 700px;
 
-    @include max(xxl) {
+    @include max(xxll) {
       width: vw(272);
     }
 
@@ -462,7 +484,7 @@
       #{$aside}-btn {
         left: 86px;
 
-        @include max(xxl) {
+        @include max(xxll) {
           left: vw(86);
         }
       }
@@ -482,7 +504,7 @@
       #{$aside}-btn {
         right: 86px;
 
-        @include max(xxl) {
+        @include max(xxll) {
           right: vw(86);
         }
       }
@@ -502,7 +524,7 @@
       padding-left: 8px;
       font-weight: 900;
 
-      @include max(xxl) {
+      @include max(xxll) {
         margin-bottom: vw(14);
         padding-left: vw(8);
       }
@@ -519,7 +541,7 @@
       line-height: 21px;
       letter-spacing: 0.02em;
 
-      @include max(xxl) {
+      @include max(xxll) {
         font-size: vw(14);
         line-height: vw(21);
       }
@@ -527,7 +549,7 @@
       p + p {
         margin-top: 24px;
 
-        @include max(xxl) {
+        @include max(xxll) {
           margin-top: vw(24);
         }
       }
@@ -536,7 +558,7 @@
     &-image {
       margin: 16px 0;
 
-      @include max(xxl) {
+      @include max(xxll) {
         margin: vw(16) 0;
       }
 
@@ -555,7 +577,7 @@
       opacity: 0;
       transition: opacity 0.6s ease, transform 0.6s ease;
 
-      @include max(xxl) {
+      @include max(xxll) {
         min-width: vw(432);
         padding: vw(30) vw(42);
       }
@@ -607,7 +629,7 @@
     white-space: nowrap;
     overflow: hidden;
 
-    @include max(xxl) {
+    @include max(xxll) {
       bottom: vw(-45);
       height: vw(322);
       font-size: vw(322);
@@ -621,7 +643,7 @@
       transform: translateX(-200px);
       transition: opacity 0.5s ease 0.2s, transform 0.5s ease 0.2s;
 
-      @include max(xxl) {
+      @include max(xxll) {
         right: vw(84);
         bottom: vw(-15);
         transform: translateX(-10.41666666666667vw);
@@ -636,7 +658,7 @@
       transform: translateX(200px);
       transition: opacity 0.5s ease 0.2s, transform 0.5s ease 0.2s;
 
-      @include max(xxl) {
+      @include max(xxll) {
         right: vw(46);
         transform: translateX(10.41666666666667vw);
       }

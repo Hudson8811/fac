@@ -13,7 +13,7 @@
       margin-right: 0;
       transform: scale(-1, 1);
 
-      @include max(xxl) {
+      @include max(xxll) {
         margin-left: vw(16);
       }
     }
@@ -30,7 +30,7 @@
     border-radius: 50%;
     align-self: center;
 
-    @include max(xxl) {
+    @include max(xxll) {
       width: vw(54);
       height: vw(54);
       margin-right: vw(16);
@@ -42,7 +42,7 @@
       align-self: center;
       margin-left: -2px;
 
-      @include max(xxl) {
+      @include max(xxll) {
         width: vw(10);
         height: vw(15);
         margin-left: vw(-2);
@@ -53,11 +53,11 @@
   &__text {
     font-size: 18px;
     line-height: 1;
-    letter-spacing: 0.22em;
+    letter-spacing: 0.022em;
     align-self: center;
     transition: opacity 0.3s ease;
 
-    @include max(xxl) {
+    @include max(xxll) {
       font-size: vw(18);
     }
   }
