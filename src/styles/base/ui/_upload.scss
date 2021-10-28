@@ -3,10 +3,28 @@
   display: flex;
   align-items: center;
   height: 54px;
-  padding-right: 70px;
-  background: url("../images/file.png") no-repeat right center;
-  background-size: 54px 54px;
+  // padding-right: 70px;
+  // background: url("../images/file.png") no-repeat right center;
+  // background-size: 54px 54px;
   cursor: pointer;
+
+  @include hover {
+    .upload {
+      &__text {
+        color: $gunmetal;
+      }
+
+      &__icon {
+        circle {
+          stroke: $gunmetal;
+        }
+
+        path {
+          fill: $gunmetal;
+        }
+      }
+    }
+  }
 
   &__input {
     position: absolute;
@@ -16,5 +34,24 @@
     height: 0;
     opacity: 0;
     visibility: hidden;
+  }
+
+  &__text {
+    margin-right: 16px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 26px;
+    color: $heather;
+    transition: $transition;
+  }
+
+  &__icon {
+    width: 54px;
+    height: 54px;
+
+    circle,
+    path {
+      transition: $transition;
+    }
   }
 }

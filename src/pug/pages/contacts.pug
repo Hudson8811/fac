@@ -7,11 +7,53 @@ block vars
       content: {
         title: 'Контактная информация',
         text: 'г. Москва Звездный бульвар, д.21, стр.3<br><a href="#" class="link">sale@facilicom.ru</a>',
+        modal: {
+          form: {
+            title: 'Пишите нам',
+            inputs: [
+              {
+                name: 'company',
+                placeholder: 'Компания',
+                required: true,
+              },
+              {
+                name: 'person',
+                placeholder: 'Контактное лицо',
+                required: true,
+              },
+              {
+                type: 'email',
+                name: 'email',
+                placeholder: 'E-mail контактного лица',
+                required: true,
+              },
+              {
+                type: 'tel',
+                name: 'tel',
+                placeholder: 'Телефон контактного лица',
+                required: true,
+              },
+              {
+                name: 'date',
+                placeholder: 'Срок окончания приема заявок',
+                required: true,
+              },
+            ],
+            button: {
+              type: 'submit',
+              class: 'tender-form__button',
+              text: 'Отправить сообщение',
+              color: 'orange',
+            },
+          },
+        }
       },
     };
 
 block main
   section.contacts.section--first
+    +modal(page.content.modal)
+
     .container
       .content
         +title(page.content.title, 'contacts__title margin-bottom--title')
@@ -27,7 +69,7 @@ block main
             a(href="tel:+74959374065").contacts-info__phone-text
               | +7 (495) 937-40-65
 
-        a(href="#").button.button--orange.contacts__button
+        a(href="#").button.button--orange.contacts__button.js-open-modal
           | СТАТЬ КЛИЕНТОМ
 
         .contacts__map

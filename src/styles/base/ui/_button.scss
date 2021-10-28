@@ -14,10 +14,14 @@
   transition: $transition;
 
   @include hover {
-    background-color: $mango;
+    background-color: $orange;
   }
 
   &--orange {
     background-color: $orange;
+
+    @include hover {
+      background-color: $mango;
+    }
   }
 }
