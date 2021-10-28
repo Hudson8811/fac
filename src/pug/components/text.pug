@@ -3,3 +3,5 @@ mixin text(text, className, mode = 'regular')
     p.text(class= className)!=text
   else if mode === 'small'
     p.text.text--small(class= className)!=text
+  else if mode === 'regular-small'
+    p.text.text--regular-small(class= className)!=text
