@@ -18,6 +18,10 @@
     line-height: 32px;
   }
 
+  @include max("sm") {
+    height: 76px;
+  }
+
   @include max("xs") {
     font-size: 15px;
     line-height: 18px;
@@ -76,13 +80,14 @@
   &__logo {
     position: relative;
     z-index: 101;
+    flex-shrink: 0;
     width: 129px;
     overflow: hidden;
     margin-right: 51px;
 
     @include max("lg") {
       margin-right: 10px;
-      flex-basis: 10%;
+      flex-basis: 129px;
     }
 
     @include max("md") {
