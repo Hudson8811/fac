@@ -18,10 +18,10 @@ body {
     main {
       display: flex;
       height: calc(100vh - 200px);
-      //flex-grow: 1;
 
       @include max(sm) {
         height: auto;
+        flex-grow: 1;
       }
     }
   }
