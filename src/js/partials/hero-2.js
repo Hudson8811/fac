@@ -24,60 +24,70 @@ window.addEventListener('load', () => {
     let isMouseEnter = false;
     let step = 0;
 
-   
-    //console.log('ontouchstart' in window)
+    let mouseInAsideLeft = false;
+    let mouseInAsideRight = false;
 
-    asideLeft.addEventListener((isMobile ? 'click' : 'mouseenter'), showAsideLeft);
+    document.addEventListener('mousemove', e => {
+      mouseInAsideLeft = e.path.includes(asideLeft);
+      mouseInAsideRight = e.path.includes(asideRight);
 
-    asideRight.addEventListener((isMobile ? 'click' : 'mouseenter'), showAsideRight);
+      console.clear()
+      console.log(mouseInAsideLeft)
+    });
 
+  
+    asideLeft[(isMobile ? 'onclick' : 'onmouseenter')] = showAsideLeft;
+    asideRight[(isMobile ? 'onclick' : 'onmouseenter')] = showAsideRight;
+    
     function showAsideLeft(e) {
-      //console.log(e)
-      //if (e.target.closest('.hero__aside--left')) {
-        asideLeft.removeEventListener((isMobile ? 'click' : 'mouseenter'), showAsideLeft);
-        (isMobile ? document : asideLeft).addEventListener((isMobile ? 'click' : 'mouseleave'), hideAsideLeft);
-        
-        isMouseEnter = true;
+      if (!mouseInAsideRight) {
+        asideLeft.onmouseenter = null;
+        asideLeft.onclick = null;
+
         hero.classList.add(HeroClass.LEFT);
-        step = 1;
 
         mainDefault.ontransitionend = () => {
           mainDefault.ontransitionend = null;
-          step = 2;
+          mainPlatform.classList.add('is-shown');
 
-          if (step == 2 && isMouseEnter) {
-            mainPlatform.classList.add('is-shown');
+          mainPlatform.ontransitionend = () => {
+            mainPlatform.ontransitionend = null;
+
+            if (mouseInAsideLeft) {
+              (isMobile ? document : asideLeft)[(isMobile ? 'onclick' : 'onmouseleave')] = hideAsideLeft;
+            } else {
+              hideAsideLeft();
+            }
+          }
+        }
+      }
+    }
+
+    function hideAsideLeft(e) {
+      //if (!isMobile || (isMobile && !e.target.closest('.hero__aside--left') || isMobile && e.target.closest('.hero__aside-close'))) {
+        document.onclick = null;
+        asideLeft.onmouseleave = null;
+        //asideLeft[(isMobile ? 'onclick' : 'onmouseenter')] = showAsideLeft;
+        
+        //asideLeft[(isMobile ? 'click' : 'mouseenter')] = showAsideLeft;
+
+        mainPlatform.classList.remove('is-shown');
+
+        mainPlatform.ontransitionend = () => {
+          mainPlatform.ontransitionend = null;
+          hero.classList.remove(HeroClass.LEFT);
+
+          if (mouseInAsideLeft) {
+            showAsideLeft();
+          } else {
+            asideLeft[(isMobile ? 'onclick' : 'onmouseenter')] = showAsideLeft;
           }
         }
       //}
     }
 
-    function hideAsideLeft(e) {
-      if (!isMobile || (isMobile && !e.target.closest('.hero__aside--left') || isMobile && e.target.closest('.hero__aside-close'))) {
-        asideLeft.addEventListener((isMobile ? 'click' : 'mouseenter'), showAsideLeft);
 
-        (isMobile ? document : asideLeft).removeEventListener((isMobile ? 'click' : 'mouseleave'), hideAsideLeft);
 
-        isMouseEnter = false;
-
-        if (step == 2 && !isMouseEnter) {
-          mainPlatform.classList.remove('is-shown');
-
-          mainPlatform.ontransitionend = () => {
-            mainPlatform.ontransitionend = null;
-            step = 1;
-
-            if (step == 1 && !isMouseEnter) {
-              hero.classList.remove(HeroClass.LEFT);
-            }
-          }
-        }
-
-        if (step == 1 && !isMouseEnter) {
-          hero.classList.remove(HeroClass.LEFT);
-        }
-      }
-    }
     function showAsideRight(e) {
       //if (e.target.closest('.hero__aside--right')) {
         asideRight.removeEventListener((isMobile ? 'click' : 'mouseenter'), showAsideRight);
@@ -119,6 +129,7 @@ window.addEventListener('load', () => {
         }
       //}
     }
+
     function hideAsideRight(e) {
       if (!isMobile || (isMobile && !e.target.closest('.hero__aside--right') || isMobile && e.target.closest('.hero__aside-close'))) {
         asideRight.addEventListener((isMobile ? 'click' : 'mouseenter'), showAsideRight);

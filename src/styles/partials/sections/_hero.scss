@@ -37,10 +37,10 @@
     }
 
     #{$self}__aside--left {
-      #{$self}__aside-inner {
+      /*#{$self}__aside-inner {
         opacity: 1;
         transform: translateX(0);
-      }
+      }*/
 
       #{$self}__aside-btn {
         opacity: 0;
@@ -55,10 +55,10 @@
       }
     }
 
-    #{$self}__bottom-left {
+    /*#{$self}__bottom-left {
       opacity: 1;
       transform: translateX(0);
-    }
+    }*/
 
     #{$self}__main {
       &-default {
@@ -151,38 +151,6 @@
     }
   }
 
-  &__title {
-    margin: 0 0 vh(15, 900);
-    padding: vh(22, 900) 0 vh(22, 900) vh(25, 900);
-    font-size: vh(64, 900);
-    font-weight: 900;
-
-    transition: opacity 0.5s ease, transform 0.8s ease;
-
-    @include minh(900) {
-      margin-bottom: 15px;
-      padding: 22px 0 22px 25px;
-      font-size: 64px;
-    }
-
-    @include max(1200) {
-      font-size: 56px;
-    }
-
-    @include max(sm) {
-      padding: 22px 0 22px 25px;
-    }
-
-    &.is-shifted {
-      transform: translateX(-30px);
-      opacity: 0;
-
-      @include max(xxll) {
-        transform: translateX(-1.5625vw);
-      }
-    }
-  }
-
   &__main {
     position: relative;
     display: flex;
@@ -218,7 +186,7 @@
       align-self: center;
       width: 100%;
       margin-bottom: vh(150, 900);
-      transition: opacity 0.5s ease;
+      //transition: opacity 0.5s ease;
 
       @include minh(900) {
         margin-bottom: 150px;
@@ -231,6 +199,176 @@
       @include max(sm) {
         margin-top: 50px;
       }
+
+      &-title {
+        margin: 0 0 vh(15, 900);
+        padding: vh(22, 900) 0 vh(22, 900) vh(25, 900);
+        font-size: vh(64, 900);
+        font-weight: 900;
+
+        //transition: opacity 0.5s ease, transform 0.8s ease;
+
+        opacity: 0;
+        transform: translateX(-30px);
+
+        @include minh(900) {
+          margin-bottom: 15px;
+          padding: 22px 0 22px 25px;
+          font-size: 64px;
+        }
+
+        @include max(1200) {
+          font-size: 56px;
+        }
+
+        @include max(sm) {
+          padding: 22px 0 22px 25px;
+        }
+
+        /*&.is-shifted {
+      transform: translateX(-30px);
+      opacity: 0;
+
+      
+    }*/
+      }
+
+      &-text {
+        max-width: vh(760, 900);
+        font-size: vh(32, 900);
+        line-height: 1.25;
+        //transition: opacity 0.5s ease, transform 0.8s ease;
+        opacity: 0;
+        transform: translateX(30px);
+
+        @include minh(900) {
+          max-width: 760px;
+          font-size: 32px;
+        }
+
+        @include max(1200) {
+          max-width: 600px;
+          font-size: 24px;
+        }
+
+        @include max(xs) {
+          font-size: 20px;
+        }
+
+        /*&.is-shifted {
+        transform: translateX(30px);
+        opacity: 0;
+      }*/
+
+        span {
+          position: relative;
+          display: inline-block;
+          padding-left: 10px;
+          padding-right: 10px;
+          font-weight: 900;
+          color: $white;
+
+          @include max(xxll) {
+            padding-right: vw(10);
+            padding-left: vw(10);
+          }
+
+          @include max(xs) {
+            padding-left: 6px;
+            padding-right: 6px;
+          }
+
+          &::before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            top: 50%;
+            left: 0;
+            transform: translateY(-44%);
+            width: 100%;
+            height: 40px;
+            background-color: $orange;
+
+            @include max(xxll) {
+              height: vw(40);
+            }
+
+            @include max(1200) {
+              height: 32px;
+            }
+
+            @include max(xs) {
+              height: 27px;
+            }
+          }
+        }
+      }
+      &-number {
+        position: absolute;
+        z-index: -2;
+        overflow: hidden;
+        right: vh(87, 900);
+        top: 50%;
+        transform: translateY(-52%);
+        display: flex;
+        height: vh(500, 900);
+        pointer-events: none;
+
+        opacity: 0;
+        //transition: opacity 0.5s ease;
+
+        @include minh(900) {
+          right: 87px;
+          height: 500px;
+        }
+
+        @include max(1200) {
+          right: 0;
+          height: 360px;
+        }
+        @include max(sm) {
+          right: 0;
+          height: 300px;
+        }
+
+        &.is-done {
+          & > * {
+            align-self: flex-end;
+          }
+        }
+
+        /*&.is-hide {
+      opacity: 0;
+    }*/
+
+        &-item {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          align-self: flex-start;
+
+          span {
+            display: block;
+            font-size: vh(500, 900);
+            font-weight: 900;
+            line-height: 1;
+            color: #000;
+            opacity: 0.03;
+            flex-shrink: 0;
+
+            @include minh(900) {
+              font-size: 500px;
+            }
+
+            @include max(1200) {
+              font-size: 360px;
+            }
+            @include max(sm) {
+              font-size: 300px;
+            }
+          }
+        }
+      }
     }
 
     &-projects {
@@ -242,9 +380,9 @@
 
       opacity: 0;
       pointer-events: none;
-      transition: opacity 0.5s ease;
+      //transition: opacity 0.5s ease;
 
-      &.is-shown {
+      &.is-shown111111 {
         opacity: 1;
         pointer-events: auto;
 
@@ -273,13 +411,7 @@
         font-weight: 900;
         opacity: 0;
         transform: translateY(20px);
-        transition: opacity 0.5s ease, transform 0.5s ease;
-
-        @include max(xxll) {
-          margin-bottom: vw(10);
-          padding-left: vw(12);
-          transform: translateY(1.041666666666667vw);
-        }
+        //transition: opacity 0.5s ease, transform 0.5s ease;
       }
 
       &-text {
@@ -290,7 +422,7 @@
         letter-spacing: 0.02em;
         opacity: 0;
         transform: translateY(20px);
-        transition: opacity 0.5s ease, transform 0.5s ease;
+        //transition: opacity 0.5s ease, transform 0.5s ease;
 
         @include max(xxll) {
           margin-bottom: vw(24);
@@ -308,7 +440,7 @@
         pointer-events: none;
         opacity: 0;
         transform: translateY(20px);
-        transition: opacity 0.5s ease, transform 0.5s ease;
+        //transition: opacity 0.5s ease, transform 0.5s ease;
         //overflow: hidden;
 
         @include minh(900) {
@@ -352,9 +484,9 @@
 
       opacity: 0;
       pointer-events: none;
-      transition: opacity 0.5s ease;
+      //transition: opacity 0.5s ease;
 
-      &.is-shown {
+      &.is-shown1111 {
         opacity: 1;
         pointer-events: auto;
       }
@@ -386,15 +518,7 @@
 
         filter: drop-shadow(0 22px 22px rgba(0, 0, 0, 0.06));
 
-        @include max(xxll) {
-          width: vw(240);
-          padding: vw(12) vw(12) vw(12) vw(17);
-          font-size: vw(12);
-          border-radius: vw(7);
-          filter: drop-shadow(
-            0 1.145833333333333vw 1.145833333333333vw rgba(0, 0, 0, 0.06)
-          );
-        }
+        opacity: 0;
 
         &::before {
           content: "";
@@ -442,144 +566,6 @@
 
     &::after {
       right: 0;
-    }
-
-    &-text {
-      max-width: vh(760, 900);
-      font-size: vh(32, 900);
-      line-height: 1.25;
-      transition: opacity 0.5s ease, transform 0.8s ease;
-
-      @include minh(900) {
-        max-width: 760px;
-        font-size: 32px;
-      }
-
-      @include max(1200) {
-        max-width: 600px;
-        font-size: 24px;
-      }
-
-      @include max(xs) {
-        font-size: 20px;
-      }
-
-      &.is-shifted {
-        transform: translateX(30px);
-        opacity: 0;
-
-        @include max(xxll) {
-          transform: translateX(1.5625vw);
-        }
-      }
-
-      span {
-        position: relative;
-        display: inline-block;
-        padding-left: 10px;
-        padding-right: 10px;
-        font-weight: 900;
-        color: $white;
-
-        @include max(xxll) {
-          padding-right: vw(10);
-          padding-left: vw(10);
-        }
-
-        @include max(xs) {
-          padding-left: 6px;
-          padding-right: 6px;
-        }
-
-        &::before {
-          content: "";
-          position: absolute;
-          z-index: -1;
-          top: 50%;
-          left: 0;
-          transform: translateY(-44%);
-          width: 100%;
-          height: 40px;
-          background-color: $orange;
-
-          @include max(xxll) {
-            height: vw(40);
-          }
-
-          @include max(1200) {
-            height: 32px;
-          }
-
-          @include max(xs) {
-            height: 27px;
-          }
-        }
-      }
-    }
-  }
-
-  &__number {
-    position: absolute;
-    z-index: -2;
-    overflow: hidden;
-    right: vh(87, 900);
-    top: 50%;
-    transform: translateY(-52%);
-    display: flex;
-    height: vh(500, 900);
-    pointer-events: none;
-    transition: opacity 0.5s ease;
-
-    @include minh(900) {
-      right: 87px;
-      height: 500px;
-    }
-
-    @include max(1200) {
-      right: 0;
-      height: 360px;
-    }
-    @include max(sm) {
-      right: 0;
-      height: 300px;
-    }
-
-    &.is-done {
-      & > * {
-        align-self: flex-end;
-      }
-    }
-
-    &.is-hide {
-      opacity: 0;
-    }
-
-    &-item {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-self: flex-start;
-
-      span {
-        display: block;
-        font-size: vh(500, 900);
-        font-weight: 900;
-        line-height: 1;
-        color: #000;
-        opacity: 0.03;
-        flex-shrink: 0;
-
-        @include minh(900) {
-          font-size: 500px;
-        }
-
-        @include max(1200) {
-          font-size: 360px;
-        }
-        @include max(sm) {
-          font-size: 300px;
-        }
-      }
     }
   }
 
@@ -730,11 +716,16 @@
       padding: 30px 42px;
       background-color: $white;
       opacity: 0;
-      transition: opacity 0.6s ease, transform 0.6s ease;
+      //transition: opacity 0.6s ease, transform 0.6s ease;
 
       @include max(1200) {
         min-width: 335px;
         padding: 24px 30px;
+      }
+
+      & > div {
+        height: 100%;
+        overflow: auto;
       }
 
       &::before {
@@ -798,7 +789,7 @@
       bottom: vh(-15, 900);
       opacity: 0;
       transform: translateX(-22.22vh);
-      transition: opacity 0.5s ease 0.2s, transform 0.5s ease 0.2s;
+      //transition: opacity 0.5s ease 0.2s, transform 0.5s ease 0.2s;
 
       @include minh(900) {
         right: 84px;

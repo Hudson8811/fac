@@ -18,16 +18,16 @@ block main
 		.hero__container.container 
 			.hero__main
 				.hero__main-default
-					+title('27 лет', 'hero__title is-shifted', 'div')
-					.hero__main-text.is-shifted мы <span>разрабатываем&nbsp;решения</span> для оптимального управления объектами недвижимости
+					+title('27 лет', 'hero__main-default-title is-shifted', 'div')
+					.hero__main-default-text.is-shifted мы <span>разрабатываем&nbsp;решения</span> для оптимального управления объектами недвижимости
 
-					.hero__number.is-hide.__js_numbers
-						.hero__number-item
+					.hero__main-default-number.is-hide.__js_numbers
+						.hero__main-default-number-item
 							- let j = 0;
 							while j < 3
 								span= j
 								-j++;
-						.hero__number-item
+						.hero__main-default-number-item
 							- let i = 0
 							while i < 8
 								span= i
@@ -52,14 +52,15 @@ block main
 					button.hero__aside-close(type="button", aria-label="Свернуть платформа F-24")
 						svg(viewBox="0 0 329.269 329" xmlns="http://www.w3.org/2000/svg")
 							path(d="M194.8 164.77 323.013 36.555c8.343-8.34 8.343-21.825 0-30.164-8.34-8.34-21.825-8.34-30.164 0L164.633 134.605 36.422 6.391c-8.344-8.34-21.824-8.34-30.164 0-8.344 8.34-8.344 21.824 0 30.164l128.21 128.215L6.259 292.984c-8.344 8.34-8.344 21.825 0 30.164a21.266 21.266 0 0 0 15.082 6.25c5.46 0 10.922-2.09 15.082-6.25l128.21-128.214 128.216 128.214a21.273 21.273 0 0 0 15.082 6.25c5.46 0 10.922-2.09 15.082-6.25 8.343-8.34 8.343-21.824 0-30.164zm0 0")
-					+title('Платформа F-24', 'hero__aside-title', 'div')
-					.hero__aside-text Контроль. Отчетность. <span>Автоматизация.</span> Документооборот. Заявки.
-					.hero__aside-image 
-						img(src="images/main/f24.jpg", srcset="images/main/f24@2x.jpg 2x", width="348", height="238", alt="")
-					.hero__aside-text 
-						p С интеграцией нашего приложения вы осуществляете полный контроль и управление объектом со своего рабочего места. 
+					div(data-simplebar)
+						+title('Платформа F-24', 'hero__aside-title', 'div')
+						.hero__aside-text Контроль. Отчетность. <span>Автоматизация.</span> Документооборот. Заявки.
+						.hero__aside-image 
+							img(src="images/main/f24.jpg", srcset="images/main/f24@2x.jpg 2x", width="348", height="238", alt="")
+						.hero__aside-text 
+							p С интеграцией нашего приложения вы осуществляете полный контроль и управление объектом со своего рабочего места. 
 
-						p Мы переносим все взаимодействия в цифровое пространство. 
+							p Мы переносим все взаимодействия в цифровое пространство. 
 				+hero-btn('F-24', 'left', 'hero__aside-btn')
 			
 			.hero__aside.hero__aside--right
@@ -67,8 +68,9 @@ block main
 					button.hero__aside-close(type="button", aria-label="Свернуть проекты")
 						svg(viewBox="0 0 329.269 329" xmlns="http://www.w3.org/2000/svg")
 							path(d="M194.8 164.77 323.013 36.555c8.343-8.34 8.343-21.825 0-30.164-8.34-8.34-21.825-8.34-30.164 0L164.633 134.605 36.422 6.391c-8.344-8.34-21.824-8.34-30.164 0-8.344 8.34-8.344 21.824 0 30.164l128.21 128.215L6.259 292.984c-8.344 8.34-8.344 21.825 0 30.164a21.266 21.266 0 0 0 15.082 6.25c5.46 0 10.922-2.09 15.082-6.25l128.21-128.214 128.216 128.214a21.273 21.273 0 0 0 15.082 6.25c5.46 0 10.922-2.09 15.082-6.25 8.343-8.34 8.343-21.824 0-30.164zm0 0")
-					each item in projects
-						+customer-card(item)
+					div(data-simplebar)
+						each item in projects
+							+customer-card(item)
 				+hero-btn('Проекты', 'right', 'hero__aside-btn')
 		
 		.hero__bottom 

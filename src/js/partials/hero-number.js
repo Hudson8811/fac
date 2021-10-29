@@ -3,7 +3,7 @@ window.addEventListener('load', () => {
 
   if (numbersEl) {
     const numbersElHeight = numbersEl.offsetHeight;
-    const items = numbersEl.querySelectorAll('.hero__number-item');
+    const items = numbersEl.querySelectorAll('.hero__main-default-number-item');
 
     items.forEach(it => {
       //const itHeight = it.scrollHeight;

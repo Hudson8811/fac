@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="keywords" content="">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.css">
     <link href="css/main.min.css" rel="stylesheet">
     <title>Главная</title>
   </head>
@@ -27,14 +28,14 @@
         <div class="hero__container container"> 
           <div class="hero__main">
             <div class="hero__main-default">
-              <div class="title hero__title is-shifted ">
+              <div class="title hero__main-default-title is-shifted ">
                 <div class="title__item">27 лет</div>
               </div>
-              <div class="hero__main-text is-shifted">мы <span>разрабатываем&nbsp;решения</span> для оптимального управления объектами недвижимости</div>
-              <div class="hero__number is-hide __js_numbers">
-                <div class="hero__number-item"><span>0</span><span>1</span><span>2</span>
+              <div class="hero__main-default-text is-shifted">мы <span>разрабатываем&nbsp;решения</span> для оптимального управления объектами недвижимости</div>
+              <div class="hero__main-default-number is-hide __js_numbers">
+                <div class="hero__main-default-number-item"><span>0</span><span>1</span><span>2</span>
                 </div>
-                <div class="hero__number-item"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span>
+                <div class="hero__main-default-number-item"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span>
                 </div>
               </div>
             </div>
@@ -59,14 +60,16 @@
                   <path d="M194.8 164.77 323.013 36.555c8.343-8.34 8.343-21.825 0-30.164-8.34-8.34-21.825-8.34-30.164 0L164.633 134.605 36.422 6.391c-8.344-8.34-21.824-8.34-30.164 0-8.344 8.34-8.344 21.824 0 30.164l128.21 128.215L6.259 292.984c-8.344 8.34-8.344 21.825 0 30.164a21.266 21.266 0 0 0 15.082 6.25c5.46 0 10.922-2.09 15.082-6.25l128.21-128.214 128.216 128.214a21.273 21.273 0 0 0 15.082 6.25c5.46 0 10.922-2.09 15.082-6.25 8.343-8.34 8.343-21.824 0-30.164zm0 0"></path>
                 </svg>
               </button>
-              <div class="title hero__aside-title ">
-                <div class="title__item">Платформа F-24</div>
-              </div>
-              <div class="hero__aside-text">Контроль. Отчетность. <span>Автоматизация.</span> Документооборот. Заявки.</div>
-              <div class="hero__aside-image"> <img src="images/main/f24.jpg" srcset="images/main/f24@2x.jpg 2x" width="348" height="238" alt=""></div>
-              <div class="hero__aside-text"> 
-                <p>С интеграцией нашего приложения вы осуществляете полный контроль и управление объектом со своего рабочего места. </p>
-                <p>Мы переносим все взаимодействия в цифровое пространство. </p>
+              <div data-simplebar>
+                <div class="title hero__aside-title ">
+                  <div class="title__item">Платформа F-24</div>
+                </div>
+                <div class="hero__aside-text">Контроль. Отчетность. <span>Автоматизация.</span> Документооборот. Заявки.</div>
+                <div class="hero__aside-image"> <img src="images/main/f24.jpg" srcset="images/main/f24@2x.jpg 2x" width="348" height="238" alt=""></div>
+                <div class="hero__aside-text"> 
+                  <p>С интеграцией нашего приложения вы осуществляете полный контроль и управление объектом со своего рабочего места. </p>
+                  <p>Мы переносим все взаимодействия в цифровое пространство. </p>
+                </div>
               </div>
             </div>
             <button class="hero__aside-btn hero-btn hero-btn--left" type="button"><span class="hero-btn__arrow"> 
@@ -81,57 +84,59 @@
                   <path d="M194.8 164.77 323.013 36.555c8.343-8.34 8.343-21.825 0-30.164-8.34-8.34-21.825-8.34-30.164 0L164.633 134.605 36.422 6.391c-8.344-8.34-21.824-8.34-30.164 0-8.344 8.34-8.344 21.824 0 30.164l128.21 128.215L6.259 292.984c-8.344 8.34-8.344 21.825 0 30.164a21.266 21.266 0 0 0 15.082 6.25c5.46 0 10.922-2.09 15.082-6.25l128.21-128.214 128.216 128.214a21.273 21.273 0 0 0 15.082 6.25c5.46 0 10.922-2.09 15.082-6.25 8.343-8.34 8.343-21.824 0-30.164zm0 0"></path>
                 </svg>
               </button>
-              <div class="customer-card">
-                <div class="customer-card__logo"><img src="images/main/logo-1.jpg" srcset="images/main/logo-1@2x.jpg 2x" width="" height="" alt=""></div>
-                <div class="customer-card__title">Международный аэропорт <br>Домодедово</div>
-                <div class="customer-card__grid">
-                  <div class="customer-card__item">
-                    <div class="customer-card__item-text">Москва</div>
-                    <div class="customer-card__item-hint">Город</div>
-                  </div>
-                  <div class="customer-card__item">
-                    <div class="customer-card__item-text">275 000 м²</div>
-                    <div class="customer-card__item-hint">Площадь</div>
-                  </div>
-                  <div class="customer-card__item customer-card__item--full">
-                    <div class="customer-card__item-text">Kомплексное обслуживание, клининг, обслуживание инженерных систем зданий,  техническое обслуживание здания.</div>
-                    <div class="customer-card__item-hint">Услуга</div>
-                  </div>
-                </div>
-              </div>
-              <div class="customer-card">
-                <div class="customer-card__logo"><img src="images/main/logo-2.jpg" srcset="images/main/logo-2@2x.jpg 2x" width="" height="" alt=""></div>
-                <div class="customer-card__title">Международный аэропорт <br>Домодедово</div>
-                <div class="customer-card__grid">
-                  <div class="customer-card__item">
-                    <div class="customer-card__item-text">Москва</div>
-                    <div class="customer-card__item-hint">Город</div>
-                  </div>
-                  <div class="customer-card__item">
-                    <div class="customer-card__item-text">275 000 м²</div>
-                    <div class="customer-card__item-hint">Площадь</div>
-                  </div>
-                  <div class="customer-card__item customer-card__item--full">
-                    <div class="customer-card__item-text">Kомплексное обслуживание, клининг, обслуживание инженерных систем зданий,  техническое обслуживание здания.</div>
-                    <div class="customer-card__item-hint">Услуга</div>
+              <div data-simplebar>
+                <div class="customer-card">
+                  <div class="customer-card__logo"><img src="images/main/logo-1.jpg" srcset="images/main/logo-1@2x.jpg 2x" width="" height="" alt=""></div>
+                  <div class="customer-card__title">Международный аэропорт <br>Домодедово</div>
+                  <div class="customer-card__grid">
+                    <div class="customer-card__item">
+                      <div class="customer-card__item-text">Москва</div>
+                      <div class="customer-card__item-hint">Город</div>
+                    </div>
+                    <div class="customer-card__item">
+                      <div class="customer-card__item-text">275 000 м²</div>
+                      <div class="customer-card__item-hint">Площадь</div>
+                    </div>
+                    <div class="customer-card__item customer-card__item--full">
+                      <div class="customer-card__item-text">Kомплексное обслуживание, клининг, обслуживание инженерных систем зданий,  техническое обслуживание здания.</div>
+                      <div class="customer-card__item-hint">Услуга</div>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="customer-card">
-                <div class="customer-card__logo"><img src="images/main/logo-1.jpg" srcset="images/main/logo-1@2x.jpg 2x" width="" height="" alt=""></div>
-                <div class="customer-card__title">Международный аэропорт <br>Домодедово</div>
-                <div class="customer-card__grid">
-                  <div class="customer-card__item">
-                    <div class="customer-card__item-text">Москва</div>
-                    <div class="customer-card__item-hint">Город</div>
+                <div class="customer-card">
+                  <div class="customer-card__logo"><img src="images/main/logo-2.jpg" srcset="images/main/logo-2@2x.jpg 2x" width="" height="" alt=""></div>
+                  <div class="customer-card__title">Международный аэропорт <br>Домодедово</div>
+                  <div class="customer-card__grid">
+                    <div class="customer-card__item">
+                      <div class="customer-card__item-text">Москва</div>
+                      <div class="customer-card__item-hint">Город</div>
+                    </div>
+                    <div class="customer-card__item">
+                      <div class="customer-card__item-text">275 000 м²</div>
+                      <div class="customer-card__item-hint">Площадь</div>
+                    </div>
+                    <div class="customer-card__item customer-card__item--full">
+                      <div class="customer-card__item-text">Kомплексное обслуживание, клининг, обслуживание инженерных систем зданий,  техническое обслуживание здания.</div>
+                      <div class="customer-card__item-hint">Услуга</div>
+                    </div>
                   </div>
-                  <div class="customer-card__item">
-                    <div class="customer-card__item-text">275 000 м²</div>
-                    <div class="customer-card__item-hint">Площадь</div>
-                  </div>
-                  <div class="customer-card__item customer-card__item--full">
-                    <div class="customer-card__item-text">Kомплексное обслуживание, клининг, обслуживание инженерных систем зданий,  техническое обслуживание здания.</div>
-                    <div class="customer-card__item-hint">Услуга</div>
+                </div>
+                <div class="customer-card">
+                  <div class="customer-card__logo"><img src="images/main/logo-1.jpg" srcset="images/main/logo-1@2x.jpg 2x" width="" height="" alt=""></div>
+                  <div class="customer-card__title">Международный аэропорт <br>Домодедово</div>
+                  <div class="customer-card__grid">
+                    <div class="customer-card__item">
+                      <div class="customer-card__item-text">Москва</div>
+                      <div class="customer-card__item-hint">Город</div>
+                    </div>
+                    <div class="customer-card__item">
+                      <div class="customer-card__item-text">275 000 м²</div>
+                      <div class="customer-card__item-hint">Площадь</div>
+                    </div>
+                    <div class="customer-card__item customer-card__item--full">
+                      <div class="customer-card__item-text">Kомплексное обслуживание, клининг, обслуживание инженерных систем зданий,  техническое обслуживание здания.</div>
+                      <div class="customer-card__item-hint">Услуга</div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -166,6 +171,8 @@
         </div>
       </div>
     </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js"></script>
     <script src="js/main.min.js"></script>
   </body>
 </html>
