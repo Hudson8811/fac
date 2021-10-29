@@ -177,11 +177,11 @@
 		width: 100%;
 
 		path {
-			fill: #a6b4bf;
+			fill: #c4d1dc;
 
 			&:hover {
 				@include min(md) {
-					fill: red;
+					fill: #d7dfe6;
 				}
 			}
 		}
