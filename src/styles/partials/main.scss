@@ -12,10 +12,13 @@ body {
   background-color: $greyLight;
 
   &.homepage {
+    header {
+      position: relative;
+    }
     main {
       display: flex;
-      height: calc(100vh - 100px);
-      flex-grow: 1;
+      height: calc(100vh - 200px);
+      //flex-grow: 1;
 
       @include max(sm) {
         height: auto;
