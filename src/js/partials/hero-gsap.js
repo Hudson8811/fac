@@ -43,11 +43,13 @@ window.addEventListener('load', () => {
     let isAsideRightOpen = false;
 
     document.addEventListener('mousemove', e => {
-      mouseInAsideLeft = e.path.includes(asideLeft);
-      mouseInAsideRight = e.path.includes(asideRight);
+      //mouseInAsideLeft = e.path.includes(asideLeft);
+      //mouseInAsideRight = e.path.includes(asideRight);
+      mouseInAsideLeft = e.target.closest('.hero__aside--left');
+      mouseInAsideRight = e.target.closest('.hero__aside--right');
 
       //console.clear()
-      //console.log(mouseInAsideLeft)
+      //console.log(e)
     });
 
     document.addEventListener('resize', () => {
