@@ -5,11 +5,13 @@ window.addEventListener('load', () => {
   if (hero) {
     const asideLeft = hero.querySelector('.hero__aside--left');
     const asideLeftInner = asideLeft.querySelector('.hero__aside--left .hero__aside-inner');
-    const asideLeftBtn = hero.querySelector('.hero__aside--left .hero-btn');
+    const asideLeftBtn = asideLeft.querySelector('.hero__aside--left .hero-btn');
+    const asideLeftBtnText = asideLeftBtn.querySelector('.hero__aside--left .hero-btn__text');
 
     const asideRight = hero.querySelector('.hero__aside--right');
     const asideRightInner = asideRight.querySelector('.hero__aside--right .hero__aside-inner');
-    const asideRightBtn = hero.querySelector('.hero__aside--right .hero-btn');
+    const asideRightBtn = asideRight.querySelector('.hero__aside--right .hero-btn');
+    const asideRightBtnText = asideRight.querySelector('.hero__aside--right .hero-btn__text');
 
     const mainDefault = hero.querySelector('.hero__main-default');
     const mainDefaultNumber = mainDefault.querySelector('.hero__main-default-number');
@@ -35,7 +37,7 @@ window.addEventListener('load', () => {
 
     let active = hero.querySelector('.hero__main-projects-image img.active');
 
-    let containerShift = true ? 160 : 0;
+    //let containerShift = true ? 160 : 0;
 
     let mouseInAsideLeft = false;
     let mouseInAsideRight = false;
@@ -43,8 +45,6 @@ window.addEventListener('load', () => {
     let isAsideRightOpen = false;
 
     document.addEventListener('mousemove', e => {
-      //mouseInAsideLeft = e.path.includes(asideLeft);
-      //mouseInAsideRight = e.path.includes(asideRight);
       mouseInAsideLeft = e.target.closest('.hero__aside--left');
       mouseInAsideRight = e.target.closest('.hero__aside--right');
 
@@ -53,7 +53,7 @@ window.addEventListener('load', () => {
     });
 
     document.addEventListener('resize', () => {
-      containerShift = true ? 160 : 0;
+      //containerShift = true ? 160 : 0;
       isMobile = document.documentElement.clientWidth < 768;
     });
 
@@ -77,15 +77,16 @@ window.addEventListener('load', () => {
 
       hero.classList.add(HeroClass.LEFT);
 
-      tl.to(mainDefault, {opacity: 0, duration: 0.5, ease: 'circ.out', onComplete: () => 
-      {
-        mainPlatform.style.position = 'relative';
-        mainDefault.style.position = 'absolute';
-      }})
-        .to(asideLeftInner, {x: 0, opacity: 1, duration: 0.5, ease: 'circ.out'}, '-=.2')
-        .to(bottomLeft, {x: 0, opacity: 1, duration: 0.5, ease: 'circ.out'}, '-=.2')
-        .to(mainPlatform, {opacity: 1, duration: 0.5, ease: 'circ.out'}, '-=.1')
-        .to(mainPlatformHint, {opacity: 1, duration: 0.5, ease: 'circ.out', onComplete: () => {
+      tl.to(asideLeftBtn, {opacity: 0, duration: 0.5, ease: 'circ.out'})
+        .to(asideRightBtnText, {opacity: 0, duration: 0.5, ease: 'circ.out'}, '-=.5')
+        .to(mainDefault, {opacity: 0, duration: 0.5, ease: 'circ.out', onComplete: () => {
+          mainPlatform.style.position = 'relative';
+          mainDefault.style.position = 'absolute';
+        }},'-=.5')
+        .to(mainPlatform, {opacity: 1, duration: 0.5, ease: 'circ.out'})
+        .to(mainPlatformHint, {opacity: 1, duration: 0.5, ease: 'circ.out'}, '-=.5')
+        .to(asideLeftInner, {x: 0, opacity: 1, duration: 0.5, ease: 'circ.out'}, '-=.8')
+        .to(bottomLeft, {x: 0, opacity: 1, duration: 0.5, ease: 'circ.out', onComplete: () => {
           
           isAsideLeftOpen = true;
 
@@ -98,7 +99,7 @@ window.addEventListener('load', () => {
           if (isMobile) {
             document.onclick = onDocumentClick;
           }
-        }}, '-=.2');
+        }}, '-=.5');
     }
 
     function onAsideLeftMouseLeave() {
@@ -110,10 +111,10 @@ window.addEventListener('load', () => {
         .to(mainPlatform, {opacity: 0, duration: 0.5, ease: 'circ.out', onComplete: () => {
           mainPlatform.style.position = '';
           mainDefault.style.position = 'relative';
-        }}, '-=.1')
-        .to(bottomLeft, {x: '-200px', opacity: 0, duration: 0.5, ease: 'circ.out'}, '-=.2')
-        .to(asideLeftInner, {x: '-100%', opacity: 0, duration: 0.5, ease: 'circ.out'}, '-=.2')
-        .to(mainDefault, {opacity: 1, duration: 0.5, ease: 'circ.out', onComplete: () => {
+        }}, '-=.5')
+        .to(mainDefault, {opacity: 1, duration: 0.5, ease: 'circ.out'})
+        .to(bottomLeft, {x: '-200px', opacity: 0, duration: 0.5, ease: 'circ.out'}, '-=.8')
+        .to(asideLeftInner, {x: '-100%', opacity: 0, duration: 0.5, ease: 'circ.out', onComplete: () => {
           
           hero.classList.remove(HeroClass.LEFT);
           isAsideLeftOpen = false;
@@ -124,7 +125,13 @@ window.addEventListener('load', () => {
             asideLeft[isMobile ? 'onclick' : 'onmouseenter'] = onAsideLeftMouseEnter;
             asideRight[isMobile ? 'onclick' : 'onmouseenter'] = onAsideRightMouseEnter;
           }
-        }}, '-=.2');
+
+           if (mouseInAsideRight && !isMobile) {
+            onAsideRightMouseEnter();
+          }
+        }}, '-=.8')
+        .to(asideLeftBtn, {opacity: 1, duration: 0.5, ease: 'circ.out'}, '-=.5')
+        .to(asideRightBtnText, {opacity: 1, duration: 0.5, ease: 'circ.out'}, '-=.5')
     }
 
     function onAsideRightMouseEnter() {
@@ -136,21 +143,23 @@ window.addEventListener('load', () => {
 
       hero.classList.add(HeroClass.RIGHT);
 
-      tl.to(mainDefault, {opacity: 0, duration: 0.5, ease: 'circ.out', onComplete: () => 
-      {
-        mainProjects.style.position = 'relative';
-        mainDefault.style.position = 'absolute';
-      }})
-        .to(asideRightInner, {x: 0, opacity: 1, duration: 0.5, ease: 'circ.out'}, '-=.2')
-        .to(bottomRight, {x: 0, opacity: 1, duration: 0.5, ease: 'circ.out'}, '-=.2')
-        .to(mainProjects, {opacity: 1, duration: 0.5, ease: 'circ.out'}, '-=.1')
-        .to(mainProjectsTitle, {opacity: 1, y: 0, duration: 0.5, ease: 'circ.out'}, '-=.3')
-        .to(mainProjectsText, {opacity: 1, y: 0, duration: 0.5, ease: 'circ.out'}, '-=.3')
-        .to(mainProjectsImage, {opacity: 1, y: 0, duration: 0.5, ease: 'circ.out', onComplete: () => {
+      tl.to(asideRightBtn, {opacity: 0, duration: 0.5, ease: 'circ.out'})
+        .to(asideLeftBtnText, {opacity: 0, duration: 0.5, ease: 'circ.out'}, '-=.5')
+        .to(mainDefault, {opacity: 0, duration: 0.5, ease: 'circ.out', onComplete: () => {
+          mainProjects.style.position = 'relative';
+          mainDefault.style.position = 'absolute';
+        }}, '-=.5')
+        .to(mainProjects, {opacity: 1, duration: 0.5, ease: 'circ.out'}, '-=.5')
+        .to(mainProjectsTitle, {opacity: 1, y: 0, duration: 0.5, ease: 'circ.out'}, '-=.5')
+        .to(mainProjectsText, {opacity: 1, y: 0, duration: 0.5, ease: 'circ.out'}, '-=.5')
+        .to(mainProjectsImage, {opacity: 1, y: 0, duration: 0.5, ease: 'circ.out'}, '-=.5')
+        .to(asideRightInner, {x: 0, opacity: 1, duration: 0.5, ease: 'circ.out'}, '-=.5')
+        .to(bottomRight, { opacity: 1, x: 0, duration: 0.5, ease: 'circ.out', onComplete: () => {
           
           requestAnimationFrame(animateImage);
 
-        }}, '-=.3');
+        }}, '-=.5');
+        
     }
 
     function onAsideRightMouseLeave() {
@@ -225,15 +234,15 @@ window.addEventListener('load', () => {
     function qqq() {
       const tl = gsap.timeline();
 
-      tl.to(mainProjectsImage, {opacity: 0, y: '20px', duration: 0.5, ease: 'circ.out'})
-        .to(mainProjectsText, {opacity: 0, y: '20px', duration: 0.5, ease: 'circ.out'}, '-=.3')
-        .to(mainProjectsTitle, {opacity: 0, y: '20px', duration: 0.5, ease: 'circ.out'}, '-=.3')
+      tl.to(asideRightInner, {x: '100%', opacity: 0, duration: 0.5, ease: 'circ.out'})
+        .to(bottomRight, { x: '200px',  opacity: 0, duration: 0.5, ease: 'circ.out'}, '-=.5')
+        .to(mainProjectsImage, {opacity: 0, y: '20px', duration: 0.5, ease: 'circ.out'}, '-=.5')
+        .to(mainProjectsText, {opacity: 0, y: '20px', duration: 0.5, ease: 'circ.out'}, '-=.5')
+        .to(mainProjectsTitle, {opacity: 0, y: '20px', duration: 0.5, ease: 'circ.out'}, '-=.5')
         .to(mainProjects, {opacity: 0, duration: 0.5, ease: 'circ.out', onComplete: () => {
           mainProjects.style.position = '';
           mainDefault.style.position = '';
-        }}, '-=.1')
-        .to(bottomRight, { opacity: 0, x: '200px', duration: 0.5, ease: 'circ.out'}, '-=.2')
-        .to(asideRightInner, {x: '100%', opacity: 0, duration: 0.5, ease: 'circ.out'}, '-=.2')
+        }}, '-=.5')
         .to(mainDefault, {opacity: 1, duration: 0.5, ease: 'circ.out', onComplete: () => {
           
           hero.classList.remove(HeroClass.RIGHT);
@@ -245,7 +254,14 @@ window.addEventListener('load', () => {
             asideRight[isMobile ? 'onclick' : 'onmouseenter'] = onAsideRightMouseEnter;
             asideLeft[isMobile ? 'onclick' : 'onmouseenter'] = onAsideLeftMouseEnter;
           }
-        }}, '-=.2');
+
+          if (mouseInAsideLeft && !isMobile) {
+            onAsideLeftMouseEnter();
+          }
+
+        }}, '-=.5')
+        .to(asideRightBtn, {opacity: 1, duration: 0.5, ease: 'circ.out'}, '-=.5')
+        .to(asideLeftBtnText, {opacity: 1, duration: 0.5, ease: 'circ.out'}, '-=.5');
         
       /*isAsideRightOpen = false;
 

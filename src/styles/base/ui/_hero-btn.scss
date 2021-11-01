@@ -61,7 +61,7 @@
     line-height: 1;
     letter-spacing: 0.022em;
     align-self: center;
-    transition: opacity 0.3s ease;
+    //transition: opacity 0.3s ease;
 
     @include max(xxll) {
       font-size: vw(18);
