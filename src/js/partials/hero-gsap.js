@@ -82,7 +82,8 @@ window.addEventListener('load', () => {
           mainDefault.style.position = 'absolute';
         }},'-=.5')
         .to(mainPlatform, {opacity: 1, duration: 0.5, ease: 'circ.out'})
-        .to(mainPlatformHint, {opacity: 1, duration: 0.5, ease: 'circ.out'}, '-=.5')
+        .to(mainPlatformImage, {rotationX: 0, duration: 0.5, ease: 'circ.out'}, '-=.5')
+        .to(mainPlatformHint, {opacity: 1, duration: 0.3, ease: 'circ.out'})
         .to(asideLeftInner, {x: 0, opacity: 1, duration: 0.5, ease: 'circ.out'}, '-=.8')
         .to(bottomLeft, {x: 0, opacity: 1, duration: 0.5, ease: 'circ.out', onComplete: () => {
           
@@ -105,7 +106,8 @@ window.addEventListener('load', () => {
       asideLeft.onmouseleave = null;
       document.onclick = null;
 
-      tl.to(mainPlatformHint, {opacity: 0, duration: 0.5, ease: 'circ.out'})
+      tl.to(mainPlatformHint, {opacity: 0, duration: 0.3, ease: 'circ.out'})
+        .to(mainPlatformImage, {rotationX: 90, duration: 0.5, ease: 'circ.out'})
         .to(mainPlatform, {opacity: 0, duration: 0.5, ease: 'circ.out', onComplete: () => {
           mainPlatform.style.position = '';
           mainDefault.style.position = 'relative';

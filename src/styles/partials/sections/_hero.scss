@@ -157,10 +157,6 @@
     width: 100%;
     max-width: 896px;
 
-    @include max(xxll) {
-      max-width: vw(896);
-    }
-
     @include max(1200) {
       max-width: calc(100% - 350px);
     }
@@ -483,17 +479,15 @@
       top: 0;
       left: 0;
 
-      opacity: 0;
+      //opacity: 0;
       pointer-events: none;
       //transition: opacity 0.5s ease;
-
-      &.is-shown1111 {
-        opacity: 1;
-        pointer-events: auto;
-      }
+      perspective: 400px;
+      perspective-origin: 50% 40%;
 
       &-image {
         position: relative;
+        transform: rotateX(90deg);
 
         img {
           display: block;
