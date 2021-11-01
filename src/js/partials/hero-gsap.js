@@ -73,8 +73,6 @@ window.addEventListener('load', () => {
       asideRight.onmouseenter = null;
       asideRight.onclick = null;
 
-      //console.log('aside click!!!')
-
       hero.classList.add(HeroClass.LEFT);
 
       tl.to(asideLeftBtn, {opacity: 0, duration: 0.5, ease: 'circ.out'})
@@ -149,7 +147,7 @@ window.addEventListener('load', () => {
           mainProjects.style.position = 'relative';
           mainDefault.style.position = 'absolute';
         }}, '-=.5')
-        .to(mainProjects, {opacity: 1, duration: 0.5, ease: 'circ.out'}, '-=.5')
+        .to(mainProjects, {opacity: 1, duration: 0.5, ease: 'circ.out'})
         .to(mainProjectsTitle, {opacity: 1, y: 0, duration: 0.5, ease: 'circ.out'}, '-=.5')
         .to(mainProjectsText, {opacity: 1, y: 0, duration: 0.5, ease: 'circ.out'}, '-=.5')
         .to(mainProjectsImage, {opacity: 1, y: 0, duration: 0.5, ease: 'circ.out'}, '-=.5')
@@ -259,7 +257,7 @@ window.addEventListener('load', () => {
             onAsideLeftMouseEnter();
           }
 
-        }}, '-=.5')
+        }})
         .to(asideRightBtn, {opacity: 1, duration: 0.5, ease: 'circ.out'}, '-=.5')
         .to(asideLeftBtnText, {opacity: 1, duration: 0.5, ease: 'circ.out'}, '-=.5');
         
