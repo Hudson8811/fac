@@ -379,27 +379,6 @@
       pointer-events: none;
       //transition: opacity 0.5s ease;
 
-      &.is-shown111111 {
-        opacity: 1;
-        pointer-events: auto;
-
-        #{$platform}-title {
-          opacity: 1;
-          transform: translateY(0);
-          //transition-delay: 0.3s;
-        }
-        #{$platform}-text {
-          opacity: 1;
-          transform: translateY(0);
-          transition-delay: 0.2s;
-        }
-        #{$platform}-image {
-          opacity: 1;
-          transform: translateY(0);
-          transition-delay: 0.3s;
-        }
-      }
-
       &-title {
         margin-bottom: 10px;
         padding-top: 0;
@@ -454,6 +433,15 @@
           max-width: none;
           height: auto;
           transform: translateY(-81px) translateX(-105px);
+
+          //opacity: 0;
+          top: 0;
+          left: 0;
+
+          &:first-child {
+            position: static !important;
+            display: block !important;
+          }
 
           @include max(1200) {
             transform: translateY(-40px) translateX(-60px);
@@ -757,12 +745,17 @@
       background-color: #f8f8f8;
 
       border: 1px solid #a6b4bf;
-      transition: all 0.3s ease;
+      transition: color 0.3s ease, border-color 0.3s ease,
+        background-color 0.3s ease;
 
       @include hover {
         background-color: $midnight;
         border-color: $midnight;
         color: $white;
+      }
+
+      &:active {
+        opacity: 0.7;
       }
     }
 

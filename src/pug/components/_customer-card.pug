@@ -2,7 +2,8 @@ mixin customer-card(item)
   .customer-card
     .customer-card__logo
       img(src="images/main/" + item.img + ".jpg", srcset="images/main/" + item.img + "@2x.jpg 2x" , width="", height="", alt="")
-    .customer-card__title!= item.title
+    .customer-card__title
+      a(href="project.html")!= item.title
     .customer-card__grid
       .customer-card__item
         .customer-card__item-text!= item.city

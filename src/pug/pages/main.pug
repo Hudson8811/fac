@@ -38,7 +38,7 @@ block main
 					.hero__main-projects-image 
 						- let img = 0;
 						while img <= 19
-							img(class= (img === 0 ? 'active' : ''),src="images/main/projects/" + img + ".png", width="1400", height="937", alt="")
+							img(class= (img === 300 ? 'active' : ''),src="images/main/projects/" + img + ".png", width="1400", height="937", alt="")
 							- img++;
 				.hero__main-platform
 					.hero__main-platform-image 
@@ -62,7 +62,7 @@ block main
 
 							p Мы переносим все взаимодействия в цифровое пространство. 
 						
-						a.hero__aside-more(href="#") Подробнее
+						a.hero__aside-more(href="technologies.html") Подробнее
 				+hero-btn('F-24', 'left', 'hero__aside-btn')
 			
 			.hero__aside.hero__aside--right

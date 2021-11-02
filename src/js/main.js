@@ -4,7 +4,8 @@
 
 //= ./partials/main.js
 //= ./partials/hero-number.js
-//= ./partials/hero-gsap.js
+// ./partials/hero-gsap.js
+//= ./partials/hero-gsap-reverse.js
 //= ./partials/headerMenu.js
 //= ./partials/modal.js
 //= ./partials/technologiesCardAnimation.js

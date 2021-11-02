@@ -171,7 +171,6 @@ window.addEventListener('load', () => {
     }
 
     function onDocumentClick(e) {
-        //e.stopImmediatePropagation();
       document.onclick = null;
       const isAsideLeft = e.target.closest('.hero__aside--left');
       const isAsideLeftBtn = e.target.closest('.hero__aside--left .hero__aside-close');
