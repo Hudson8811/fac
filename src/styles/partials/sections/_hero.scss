@@ -515,6 +515,12 @@
 
         opacity: 0;
 
+        @include max(xs) {
+          left: 50%;
+          top: 5%;
+          transform: translateX(-50%);
+        }
+
         &::before {
           content: "";
           position: absolute;
@@ -775,8 +781,15 @@
       }
 
       & > div {
+        width: calc(100% + 20px);
         height: 100%;
+        margin-right: -20px;
+        padding-right: 20px;
         overflow: auto;
+      }
+
+      .customer-card {
+        margin-right: 20px;
       }
 
       &::before {
