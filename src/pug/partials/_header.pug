@@ -8,7 +8,7 @@ header.header
           nav.header__nav
             -
               const navlist = [
-                { link: '#', text: 'О компании' },
+                { link: './about.html', text: 'О компании' },
                 { link: './technologies.html', text: 'Технологии' },
                 { link: './projects.html', text: 'Проекты' },
                 { link: './partners.html', text: 'Партнерам' },
@@ -18,7 +18,7 @@ header.header
               a(href=item.link).header-link.header__nav-link=item.text
           
           .header__controls
-            +button( { text: 'Пригласить на тендер', class: 'header__controls-button' } )
+            +button( { link: './tender.html', text: 'Пригласить на тендер', class: 'header__controls-button' } )
 
             a(href="#").header-link.header-link--small.header__controls-link.header__controls-login
               | Вход
