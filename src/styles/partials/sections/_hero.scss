@@ -134,7 +134,7 @@
 
   &__container {
     display: flex;
-    max-width: 1440px; //1760px;
+    max-width: none; //1440px; //1760px;
 
     justify-content: center;
     //align-self: stretch;
@@ -156,6 +156,10 @@
     display: flex;
     width: 100%;
     max-width: 896px;
+
+    @include max(lg) {
+      width: 62%;
+    }
 
     @include max(1200) {
       max-width: calc(100% - 350px);
@@ -563,16 +567,25 @@
     position: relative;
     display: flex;
     align-self: stretch;
-    width: 272px;
+    width: 100%;
+    max-width: calc((100% - 896px) / 2); //272px;
+    min-width: 272px;
+
+    @include max(lg) {
+      max-width: 272px;
+      width: 19%;
+    }
 
     @include max(1200) {
-      width: 160px;
+      min-width: 160px;
     }
 
     @include max(sm) {
       position: relative;
       z-index: 1;
       width: 50%;
+      max-width: none;
+      min-width: 0;
       height: 60px;
       align-self: flex-end;
       //background-color: red;
@@ -591,14 +604,15 @@
       }
 
       #{$aside}-btn {
-        left: 86px;
-
-        @include max(xxll) {
-          left: vw(86);
-        }
+        right: 26px;
 
         @include max(1200) {
+          right: 0;
+        }
+
+        @include max(sm) {
           left: 15px;
+          right: auto;
         }
       }
 
@@ -619,13 +633,14 @@
       }
 
       #{$aside}-btn {
-        right: 86px;
-
-        @include max(xxll) {
-          right: vw(86);
-        }
+        left: 26px;
 
         @include max(1200) {
+          left: 0;
+        }
+
+        @include max(sm) {
+          left: auto;
           right: 15px;
         }
       }
@@ -800,6 +815,7 @@
       position: absolute;
       top: 43%;
       transform: translateY(-50%);
+      min-width: 160px;
 
       //transition: opacity 0.3s ease;
 
