@@ -571,6 +571,15 @@
     max-width: calc((100% - 896px) / 2); //272px;
     min-width: 272px;
 
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
     @include max(lg) {
       max-width: 272px;
       width: 19%;
@@ -597,6 +606,10 @@
     &--left {
       order: -1;
       justify-content: flex-end;
+
+      &::before {
+        transform: translateX(-99%);
+      }
 
       @include max(sm) {
         order: 0;
@@ -627,6 +640,10 @@
 
     &--right {
       justify-content: flex-start;
+
+      &::before {
+        transform: translateX(99%);
+      }
 
       @include max(sm) {
         //background-color: red;
