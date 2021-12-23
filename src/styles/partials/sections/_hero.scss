@@ -43,12 +43,14 @@
       }*/
 
       #{$self}__aside-btn {
-        //opacity: 0;
+        pointer-events: none;
       }
     }
 
     #{$self}__aside--right {
       #{$self}__aside-btn {
+        pointer-events: none;
+
         .hero-btn__text {
           //opacity: 0;
         }
